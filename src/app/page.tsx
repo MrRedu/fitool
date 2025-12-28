@@ -1,25 +1,17 @@
+import Link from 'next/link';
 import { Skeleton } from '@/components/ui/skeleton';
 import { Typography } from '@/components/ui/typography';
-import Link from 'next/link';
-
-const CALCULATORS = [
-  {
-    name: 'Calculadora de Calorías (Harris-Benedict)',
-    href: '/calculators/harris-benedict',
-  },
-];
-
-const TOOLS = [
-  {
-    name: 'Creador de rutina',
-    href: '/tools/routine-creator',
-  },
-];
+import { CALCULATORS, TOOLS } from '@/lib/constants';
+import { HeroSection } from '@/components/molecules/hero';
+import { Pricing } from '@/components/layout/pricing';
+import { FAQ } from '@/components/layout/faq';
 
 export default function HomePage() {
   return (
     <>
-      <section className="container mx-auto px-4 md:px-6 lg:px-8 my-10 space-y-10">
+      <HeroSection />
+
+      <section className="container mx-auto px-4 md:px-6 lg:px-8 my-32 space-y-10 w-full">
         <div className="space-y-4">
           <Typography variant="h2" className="border-none">
             Herramientas
@@ -42,15 +34,22 @@ export default function HomePage() {
           <ul className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
             {CALCULATORS.map((calculator) => (
               <li key={calculator.href}>
-                <Link href={calculator.href}>
-                  <Skeleton className="h-50" />
-                  <Typography variant="large">{calculator.name}</Typography>
+                <Link href={calculator.href} className="space-y-2">
+                  <img
+                    src="/calculators/calculator-harris-benedict.png"
+                    alt={calculator.name}
+                    className="rounded-md"
+                  />
+                  <Typography variant="muted">{calculator.name}</Typography>
                 </Link>
               </li>
             ))}
           </ul>
         </div>
       </section>
+
+      <Pricing />
+      <FAQ />
     </>
   );
 }
