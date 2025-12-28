@@ -58,9 +58,22 @@ export const UNIT_WEIGHT_OPTIONS = [
   { label: 'lb', value: 'lb' },
 ];
 
-
 export const DURATION_TYPES_MAPPING = {
   reps: 'reps',
   seconds: 's',
   minutes: 'min',
 } as const;
+
+export const CALCULATORS = [
+  {
+    name: 'Calculadora de Calorías (Harris-Benedict)',
+    href: '/calculators/harris-benedict',
+  },
+];
+
+export const TOOLS = [
+  {
+    name: 'Creador de rutina',
+    href: '/tools/routine-creator',
+  },
+];
