@@ -4,6 +4,7 @@ import { Typography } from '@/components/ui/typography';
 import { CALCULATORS, TOOLS } from '@/lib/constants';
 import { HeroSection } from '@/components/molecules/hero';
 import { Pricing } from '@/components/layout/pricing';
+import { FAQ } from '@/components/layout/faq';
 
 export default function HomePage() {
   return (
@@ -48,6 +49,7 @@ export default function HomePage() {
       </section>
 
       <Pricing />
+      <FAQ />
     </>
   );
 }

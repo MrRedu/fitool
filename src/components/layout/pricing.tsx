@@ -174,12 +174,12 @@ export const Pricing = ({ className }: PricingProps) => {
   const [billing, setBilling] = useState<'monthly' | 'annually'>('monthly');
 
   return (
-    <section className={cn('py-32', className)}>
+    <section className={cn('py-32 w-full', className)}>
       <div className="container mb-8 lg:mb-0 mx-auto w-full px-4 md:px-6 lg:px-8">
         <div className="grid grid-cols-2 gap-y-12 md:gap-y-16">
           <div className="col-span-2 flex flex-col lg:col-span-1">
-            <h2 className="my-6 text-3xl font-bold text-pretty md:text-4xl xl:text-5xl">
-              Pricing Plans
+            <h2 className="my-6 text-3xl font-semibold text-pretty md:text-4xl xl:text-5xl">
+              Planes
             </h2>
             <p className="text-muted-foreground lg:text-xl">
               Lorem ipsum dolor sit amet consectetur adipisicing elit.
@@ -192,15 +192,15 @@ export const Pricing = ({ className }: PricingProps) => {
               <div className="col-span-2">
                 <div className="flex h-full flex-col justify-end">
                   <span className="mb-2 text-xs font-medium text-muted-foreground">
-                    Billing
+                    Facturación
                   </span>
                   <Tabs
                     value={billing}
                     onValueChange={setBilling as (value: string) => void}
                   >
                     <TabsList>
-                      <TabsTrigger value="monthly">Monthly</TabsTrigger>
-                      <TabsTrigger value="annually">Annually</TabsTrigger>
+                      <TabsTrigger value="monthly">Mensual</TabsTrigger>
+                      <TabsTrigger value="annually">Anual</TabsTrigger>
                     </TabsList>
                   </Tabs>
                 </div>
