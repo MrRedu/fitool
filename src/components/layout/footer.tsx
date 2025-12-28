@@ -16,10 +16,10 @@ const SOCIAL_LINKS = [
     name: 'TikTok',
     href: '#',
   },
-  {
-    name: 'Facebook',
-    href: '#',
-  },
+  // {
+  //   name: 'Facebook',
+  //   href: '#',
+  // },
   // {
   //   name: 'Twitter',
   //   href: '#',
@@ -28,19 +28,27 @@ const SOCIAL_LINKS = [
 
 const LINKS = [
   {
-    name: 'Home',
+    name: 'Inicio',
     href: '#',
   },
   {
-    name: 'About',
+    name: 'Herramientas',
     href: '#',
   },
   {
-    name: 'Pricing',
+    name: 'Calculadoras',
     href: '#',
   },
   {
-    name: 'Contact',
+    name: 'Membresías',
+    href: '#',
+  },
+  {
+    name: 'Contacto',
+    href: '#',
+  },
+  {
+    name: 'Ubicación',
     href: '#',
   },
 ];
@@ -52,7 +60,7 @@ export const Footer = () => {
         <div className="flex flex-col justify-between gap-15 lg:flex-row">
           <div className="flex flex-col gap-10">
             <p className="relative text-4xl font-medium tracking-tight lg:text-5xl">
-              Unlock 800+ blocks now
+              ¡Desbloquea tu máximo potencial ahora!
             </p>
             <div className="space-y-1 text-sm font-light tracking-tight lg:text-base">
               <p>Get Support: </p>
