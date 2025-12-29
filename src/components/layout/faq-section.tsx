@@ -1,8 +1,8 @@
 import { Clock, Heart, Home, Wallet } from 'lucide-react';
 
-export const FAQ = () => {
+export const FAQSection = () => {
   return (
-    <section className="py-32 w-full">
+    <section className="w-full md:px-6 lg:px-8 py-32">
       <div className="container w-full mx-auto">
         <div className="mx-auto max-w-3xl">
           <h2 className="text-center text-3xl font-semibold md:text-5xl lg:mx-14 text-balance">

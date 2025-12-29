@@ -2,16 +2,22 @@ import Link from 'next/link';
 import { Skeleton } from '@/components/ui/skeleton';
 import { Typography } from '@/components/ui/typography';
 import { CALCULATORS, TOOLS } from '@/lib/constants';
-import { HeroSection } from '@/components/molecules/hero';
-import { Pricing } from '@/components/layout/pricing';
-import { FAQ } from '@/components/layout/faq';
+import {
+  HeroSection,
+  FAQSection,
+  PricingSection,
+  TeamSection,
+  StepsSection,
+  ContactSection,
+} from '@/components/layout';
+import { Header } from '@/components/layout/header';
 
 export default function HomePage() {
   return (
     <>
       <HeroSection />
-
-      <section className="container mx-auto px-4 md:px-6 lg:px-8 my-32 space-y-10 w-full">
+      <Header />
+      <section className="container mx-auto px-4 md:px-6 lg:px-8 py-32 space-y-10 w-full">
         <div className="space-y-4">
           <Typography variant="h2" className="border-none">
             Herramientas
@@ -47,9 +53,11 @@ export default function HomePage() {
           </ul>
         </div>
       </section>
-
-      <Pricing />
-      <FAQ />
+      <StepsSection />
+      <PricingSection />
+      <TeamSection />
+      <FAQSection />
+      <ContactSection />
     </>
   );
 }
