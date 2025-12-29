@@ -22,26 +22,26 @@ import {
 
 const plans = [
   {
-    title: 'Free',
-    price: { monthly: '$9', annually: '$9' },
+    title: 'Restringido',
+    price: { monthly: '$30', annually: '$360' },
     href: '#',
     recommended: false,
   },
   {
-    title: 'Basic',
-    price: { monthly: '$50', annually: '$45' },
+    title: 'Héroe',
+    price: { monthly: '$45', annually: '$500' },
     href: '#',
     recommended: false,
   },
   {
-    title: 'Team',
-    price: { monthly: '$100', annually: '$90' },
+    title: 'Jomers',
+    price: { monthly: '$90', annually: '$1.000' },
     href: '#',
     recommended: true,
   },
   {
-    title: 'Enterprise',
-    price: { monthly: '$200', annually: '$160' },
+    title: 'Enérgico',
+    price: { monthly: '$60', annually: '$720' },
     href: '#',
     recommended: false,
   },
@@ -170,11 +170,11 @@ interface PricingProps {
   className?: string;
 }
 
-export const Pricing = ({ className }: PricingProps) => {
+export const PricingSection = ({ className }: PricingProps) => {
   const [billing, setBilling] = useState<'monthly' | 'annually'>('monthly');
 
   return (
-    <section className={cn('py-32 w-full', className)}>
+    <section className={cn('py-32 w-full', className)} id="pricing">
       <div className="container mb-8 lg:mb-0 mx-auto w-full px-4 md:px-6 lg:px-8">
         <div className="grid grid-cols-2 gap-y-12 md:gap-y-16">
           <div className="col-span-2 flex flex-col lg:col-span-1">
@@ -182,7 +182,7 @@ export const Pricing = ({ className }: PricingProps) => {
               Planes
             </h2>
             <p className="text-muted-foreground lg:text-xl">
-              Lorem ipsum dolor sit amet consectetur adipisicing elit.
+              Tenemos el que necesitas.
             </p>
           </div>
         </div>

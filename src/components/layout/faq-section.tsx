@@ -1,6 +1,6 @@
 import { Clock, Heart, Home, Wallet } from 'lucide-react';
 
-export const FAQ = () => {
+export const FAQSection = () => {
   return (
     <section className="py-32 w-full">
       <div className="container w-full mx-auto">
