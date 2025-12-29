@@ -16,7 +16,7 @@ const steps: Step[] = [
     id: 'discovery',
     number: '01',
     title: 'Rookie',
-    heading: 'Adaptación y Hábito',
+    heading: 'Adaptación y hábito',
     description:
       'Te familiarizarás con las máquinas y la técnica correcta. El enfoque principal es crear la disciplina de asistir y despertar tu metabolismo.',
     progress: 25,
@@ -26,7 +26,7 @@ const steps: Step[] = [
     id: 'transformation',
     number: '02',
     title: 'Amateur',
-    heading: 'Resultados Visibles',
+    heading: 'Resultados visibles',
     description:
       'Tu fuerza aumenta notablemente y notarás cambios en tu composición corporal. Es el punto donde el ejercicio se convierte en un estilo de vida.',
     progress: 60,
@@ -36,7 +36,7 @@ const steps: Step[] = [
     id: 'mastery',
     number: '03',
     title: 'Intermediate',
-    heading: 'Atleta y Estilo de Vida',
+    heading: 'Atleta y estilo de Vida',
     description:
       'Has alcanzado una versión física superior. Ahora el objetivo es el mantenimiento avanzado, la salud a largo plazo y la superación de récords personales.',
     progress: 100,
@@ -49,7 +49,7 @@ export const StepsSection = () => {
     <div className="mx-auto container w-full px-4 md:px-6 lg:px-8 py-32">
       <div className="mb-12 space-y-4 text-left">
         <h1 className="text-4xl font-bold tracking-tight text-foreground md:text-5xl">
-          Tu Camino al Cambio Físico
+          Tu camino al cambio físico
         </h1>
         <p className="max-w-2xl text-lg text-muted-foreground">
           Conoce las etapas de tu transformación. Desde el primer día hasta

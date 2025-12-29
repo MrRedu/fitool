@@ -34,7 +34,7 @@ const plans = [
     recommended: false,
   },
   {
-    title: 'Jomers',
+    title: 'FiToolers',
     price: { monthly: '$90', annually: '$1.000' },
     href: '#',
     recommended: true,
@@ -185,7 +185,7 @@ export const PricingSection = ({ className }: PricingProps) => {
               Planes
             </h2>
             <p className="text-muted-foreground lg:text-xl">
-              Tenemos el que necesitas.
+              Tenemos lo que necesitas.
             </p>
           </div>
         </div>
