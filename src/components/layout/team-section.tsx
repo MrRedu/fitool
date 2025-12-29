@@ -11,7 +11,7 @@ import { cn } from '@/lib/utils';
 const team = [
   {
     name: 'John Doe',
-    role: 'Entrenador',
+    role: 'Monitor de sala',
     image: '/hero/1.webp',
   },
   {
@@ -21,12 +21,12 @@ const team = [
   },
   {
     name: 'Mike Johnson',
-    role: 'Entrenador',
+    role: 'Fisioterapeuta',
     image: '/hero/1.webp',
   },
   {
     name: 'Sarah Williams',
-    role: 'Entrenador',
+    role: 'Monitor de sala',
     image: '/hero/1.webp',
   },
   {
@@ -36,7 +36,7 @@ const team = [
   },
   {
     name: 'Emily Brown',
-    role: 'Entrenador',
+    role: 'Fisioterapeuta',
     image: '/hero/1.webp',
   },
 ];

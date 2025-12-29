@@ -1,6 +1,5 @@
 import Link from 'next/link';
-import { Instagram } from '../atoms/icons/instagram-icon';
-import { TikTok } from '../atoms/icons/tiktok-icon';
+import { Instagram, TikTok, WhatsApp } from '../atoms/icons';
 
 export const ContactSection = () => {
   return (
@@ -21,15 +20,21 @@ export const ContactSection = () => {
               </p>
             </div>
             <div>
-              <h2 className="font-semibold">Correo electrónico</h2>
+              <h2 className="font-semibold">Contacto</h2>
               <div className="mt-3">
-                <div>
-                  <a
+                <div className="flex flex-col">
+                  <Link
                     href="#"
                     className="text-muted-foreground hover:text-foreground"
                   >
-                    fitool@example.com
-                  </a>
+                    hi@fitool.com
+                  </Link>
+                  <Link
+                    href="#"
+                    className="text-muted-foreground hover:text-foreground"
+                  >
+                    +58 412-800-00
+                  </Link>
                 </div>
               </div>
             </div>
@@ -49,6 +54,12 @@ export const ContactSection = () => {
                 >
                   <TikTok className="size-6" />
                 </Link>
+                <Link
+                  href="#"
+                  className="text-muted-foreground hover:text-foreground"
+                >
+                  <WhatsApp className="size-6" />
+                </Link>
               </div>
             </div>
           </div>
@@ -59,7 +70,7 @@ export const ContactSection = () => {
           {/* Map */}
           <div
             className="relative w-full h-full min-h-[420px] rounded overflow-hidden 
-            bg-[url('/hero/2.webp')] bg-center bg-cover
+            bg-[url('/contact/map.webp')] bg-center bg-cover
             border
           "
           >

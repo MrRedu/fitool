@@ -23,25 +23,25 @@ import {
 const plans = [
   {
     title: 'Restringido',
-    price: { monthly: '$30', annually: '$360' },
+    price: { monthly: '$30', annually: '$300' }, // Ejemplo de descuento anual
     href: '#',
     recommended: false,
   },
   {
     title: 'Héroe',
-    price: { monthly: '$45', annually: '$500' },
+    price: { monthly: '$45', annually: '$450' },
     href: '#',
     recommended: false,
   },
   {
     title: 'FiToolers',
-    price: { monthly: '$90', annually: '$1.000' },
+    price: { monthly: '$90', annually: '$900' },
     href: '#',
     recommended: true,
   },
   {
     title: 'Enérgico',
-    price: { monthly: '$60', annually: '$720' },
+    price: { monthly: '$60', annually: '$600' }, // Basado en el paquete de 20 clases
     href: '#',
     recommended: false,
   },
@@ -49,117 +49,110 @@ const plans = [
 
 const featureMatrix = [
   {
-    title: 'Overview',
+    title: 'Beneficios incluidos (Todos los planes)',
     features: [
       {
-        title: 'Always included reature',
+        title: 'Comodidades básicas',
+        info: 'Café gratis, Lockers, Seguridad y Wifi en todas las áreas.',
         inclusions: [
-          {
-            plan: 'Free',
-            content: 'Lorem ipsum dolor sit amet consectetur adipisicing elit.',
-          },
-          {
-            plan: 'Basic',
-            content: 'Lorem ipsum dolor sit amet consectetur adipisicing elit.',
-          },
-          {
-            plan: 'Teams',
-            content: 'Lorem ipsum dolor sit amet consectetur adipisicing elit.',
-          },
-          {
-            plan: 'Enterprise',
-            content: 'Lorem ipsum dolor sit amet consectetur adipisicing elit.',
-          },
+          { plan: 'Restringido', content: <Check className="size-5" /> },
+          { plan: 'Héroe', content: <Check className="size-5" /> },
+          { plan: 'FiToolers', content: <Check className="size-5" /> },
+          { plan: 'Enérgico', content: <Check className="size-5" /> },
         ],
       },
       {
-        title: 'Number of products',
-        info: 'Help text',
+        title: 'Instalaciones',
+        info: 'Acceso a duchas, vestidores y estacionamiento privado.',
         inclusions: [
-          { plan: 'Free', content: '1' },
-          { plan: 'Basic', content: '1' },
-          { plan: 'Teams', content: '3' },
-          { plan: 'Enterprise', content: '5' },
-        ],
-      },
-      {
-        title: 'Number of transactions',
-        info: 'Help text',
-        inclusions: [
-          { plan: 'Free', content: '30 monthly' },
-          { plan: 'Basic', content: 'Unlimited' },
-          { plan: 'Teams', content: 'Unlimited' },
-          { plan: 'Enterprise', content: 'Unlimited' },
+          { plan: 'Restringido', content: <Check className="size-5" /> },
+          { plan: 'Héroe', content: <Check className="size-5" /> },
+          { plan: 'FiToolers', content: <Check className="size-5" /> },
+          { plan: 'Enérgico', content: <Check className="size-5" /> },
         ],
       },
     ],
   },
   {
-    title: 'Other features',
+    title: 'Áreas y disciplinas',
     features: [
       {
-        title: 'Basic feature',
+        title: 'Musculación y Cardio',
         inclusions: [
+          { plan: 'Restringido', content: <Check className="size-5" /> },
+          { plan: 'Héroe', content: <Check className="size-5" /> },
+          { plan: 'FiToolers', content: <Check className="size-5" /> },
           {
-            plan: 'Free',
-            content: <Check className="size-4 lg:size-5" />,
+            plan: 'Enérgico',
+            content: <X className="size-5 text-muted-foreground" />,
           },
+        ],
+      },
+      // {
+      //   title: 'Boxeo',
+      //   inclusions: [
+      //     { plan: 'Restringido', content: <Check className="size-5" /> },
+      //     {
+      //       plan: 'Héroe',
+      //       content: <X className="size-5 text-muted-foreground" />,
+      //     },
+      //     { plan: 'FiToolers', content: <Check className="size-5" /> },
+      //     {
+      //       plan: 'Enérgico',
+      //       content: <X className="size-5 text-muted-foreground" />,
+      //     },
+      //   ],
+      // },
+      {
+        title: 'Crossfit y Funcional',
+        inclusions: [
+          { plan: 'Restringido', content: <Check className="size-5" /> },
+          { plan: 'Héroe', content: <Check className="size-5" /> },
+          { plan: 'FiToolers', content: <Check className="size-5" /> },
           {
-            plan: 'Basic',
-            content: <Check className="size-4 lg:size-5" />,
-          },
-          {
-            plan: 'Teams',
-            content: <Check className="size-4 lg:size-5" />,
-          },
-          {
-            plan: 'Enterprise',
-            content: <Check className="size-4 lg:size-5" />,
+            plan: 'Enérgico',
+            content: <X className="size-5 text-muted-foreground" />,
           },
         ],
       },
       {
-        title: 'Enterprise feature',
-        info: 'Hello',
+        title: 'Ciclismo (Bike/Spinning)',
+        info: 'Xtreme Bike y Spinning convencional.',
         inclusions: [
           {
-            plan: 'Free',
-            content: <X className="size-4 text-muted-foreground lg:size-5" />,
+            plan: 'Restringido',
+            content: <X className="size-5 text-muted-foreground" />,
           },
           {
-            plan: 'Basic',
-            content: <X className="size-4 text-muted-foreground lg:size-5" />,
+            plan: 'Héroe',
+            content: <X className="size-5 text-muted-foreground" />,
           },
-          {
-            plan: 'Teams',
-            content: <X className="size-4 text-muted-foreground lg:size-5" />,
-          },
-          {
-            plan: 'Enterprise',
-            content: <Check className="size-5" />,
-          },
+          { plan: 'FiToolers', content: <Check className="size-5" /> },
+          { plan: 'Enérgico', content: <Check className="size-5" /> },
+        ],
+      },
+    ],
+  },
+  {
+    title: 'Condiciones de Acceso',
+    features: [
+      {
+        title: 'Horario Restringido',
+        info: 'Horario completo: Lunes a sábados de 6:00am hasta las 9:00pm.',
+        inclusions: [
+          { plan: 'Restringido', content: 'Solo de 11:30 a 1:30' },
+          { plan: 'Héroe', content: 'Horario Completo' },
+          { plan: 'FiToolers', content: 'Horario Completo' },
+          { plan: 'Enérgico', content: 'Por Clase' },
         ],
       },
       {
-        title: 'Optional feature',
-        info: 'Hello',
+        title: 'Entrenador Personalizado',
         inclusions: [
-          {
-            plan: 'Free',
-            content: <X className="size-4 text-muted-foreground lg:size-5" />,
-          },
-          {
-            plan: 'Basic',
-            content: <X className="size-4 text-muted-foreground lg:size-5" />,
-          },
-          {
-            plan: 'Teams',
-            content: <Badge>Add-on</Badge>,
-          },
-          {
-            plan: 'Enterprise',
-            content: <Badge>Add-on</Badge>,
-          },
+          { plan: 'Restringido', content: <Check className="size-5" /> },
+          { plan: 'Héroe', content: <Check className="size-5" /> },
+          { plan: 'FiToolers', content: <Check className="size-5" /> },
+          { plan: 'Enérgico', content: 'Instructor de Clase' },
         ],
       },
     ],
@@ -182,7 +175,7 @@ export const PricingSection = ({ className }: PricingProps) => {
         <div className="grid grid-cols-2 gap-y-12 md:gap-y-16">
           <div className="col-span-2 flex flex-col lg:col-span-1">
             <h2 className="my-6 text-3xl font-semibold text-pretty md:text-4xl xl:text-5xl">
-              Planes
+              Membresías
             </h2>
             <p className="text-muted-foreground lg:text-xl">
               Tenemos lo que necesitas.
@@ -220,7 +213,7 @@ export const PricingSection = ({ className }: PricingProps) => {
                     {plan.price[billing]}
                     <span className="hidden 2xl:inline"> / monthly</span>
                   </p>
-                  <Button
+                  {/* <Button
                     variant={plan.recommended ? 'default' : 'outline'}
                     className="w-full"
                   >
@@ -228,7 +221,7 @@ export const PricingSection = ({ className }: PricingProps) => {
                     <span className="hidden 2xl:inline">
                       Get started for free
                     </span>
-                  </Button>
+                  </Button> */}
                 </div>
               ))}
             </div>
@@ -321,7 +314,7 @@ export const PricingSection = ({ className }: PricingProps) => {
           ))}
         </div>
         <p className="mt-4 hidden text-xs text-muted-foreground md:block">
-          * Caveats and other conditions
+          * Sujeto a cambios y condiciones
         </p>
       </div>
     </section>

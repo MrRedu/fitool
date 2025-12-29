@@ -64,7 +64,7 @@ const TOOLS = [
 
 const NAVS = [
   {
-    title: 'Planes',
+    title: 'Membresías',
     href: '/#pricing',
   },
   {

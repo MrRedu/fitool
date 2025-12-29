@@ -29,7 +29,7 @@ const SOCIAL_LINKS = [
 const LINKS = [
   {
     name: 'Inicio',
-    href: '#',
+    href: '/',
   },
   {
     name: 'Herramientas',
@@ -41,15 +41,11 @@ const LINKS = [
   },
   {
     name: 'Membresías',
-    href: '#',
+    href: '/#pricing',
   },
   {
     name: 'Contacto',
-    href: '#',
-  },
-  {
-    name: 'Ubicación',
-    href: '#',
+    href: '/#contact',
   },
 ];
 
@@ -63,7 +59,7 @@ export const Footer = () => {
               ¡Desbloquea tu máximo potencial ahora!
             </p>
             <div className="space-y-1 text-sm font-light tracking-tight lg:text-base">
-              <p>Get Support: </p>
+              <p>Obtén asistencia: </p>
               <a href="#">hi@fitool.com</a>
             </div>
           </div>
@@ -97,7 +93,7 @@ export const Footer = () => {
         <div className="mt-20 flex flex-col justify-between gap-15 lg:flex-row">
           <div className="flex w-full max-w-md flex-col gap-10">
             <div className="space-y-1 text-sm font-light tracking-tight lg:text-base">
-              <p>Sign up for newsletter: </p>
+              <p>Suscríbete al boletín informativo:</p>
               <form
                 className="flex w-full items-end border-b border-b-foreground/10"
                 action="#"
