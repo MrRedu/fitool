@@ -55,7 +55,7 @@ const LINKS = [
 
 export const Footer = () => {
   return (
-    <section className="dark bg-background py-32 text-foreground w-full">
+    <section className="dark bg-background text-foreground w-full px-4 md:px-6 lg:px-8 py-32">
       <div className="container mx-auto w-full">
         <div className="flex flex-col justify-between gap-15 lg:flex-row">
           <div className="flex flex-col gap-10">
