@@ -174,7 +174,10 @@ export const PricingSection = ({ className }: PricingProps) => {
   const [billing, setBilling] = useState<'monthly' | 'annually'>('monthly');
 
   return (
-    <section className={cn('py-32 w-full', className)} id="pricing">
+    <section
+      className={cn('py-32 w-full md:px-6 lg:px-8', className)}
+      id="pricing"
+    >
       <div className="container mb-8 lg:mb-0 mx-auto w-full px-4 md:px-6 lg:px-8">
         <div className="grid grid-cols-2 gap-y-12 md:gap-y-16">
           <div className="col-span-2 flex flex-col lg:col-span-1">

@@ -46,7 +46,7 @@ const steps: Step[] = [
 
 export const StepsSection = () => {
   return (
-    <div className="mx-auto container w-full px-4 py-12 md:py-20">
+    <div className="mx-auto container w-full px-4 md:px-6 lg:px-8 py-32">
       <div className="mb-12 space-y-4 text-left">
         <h1 className="text-4xl font-bold tracking-tight text-foreground md:text-5xl">
           Tu Camino al Cambio Físico

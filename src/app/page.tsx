@@ -8,6 +8,7 @@ import {
   PricingSection,
   TeamSection,
   StepsSection,
+  ContactSection,
 } from '@/components/layout';
 import { Header } from '@/components/layout/header';
 
@@ -15,9 +16,8 @@ export default function HomePage() {
   return (
     <>
       <HeroSection />
-
       <Header />
-      <section className="container mx-auto px-4 md:px-6 lg:px-8 my-32 space-y-10 w-full">
+      <section className="container mx-auto px-4 md:px-6 lg:px-8 py-32 space-y-10 w-full">
         <div className="space-y-4">
           <Typography variant="h2" className="border-none">
             Herramientas
@@ -53,14 +53,11 @@ export default function HomePage() {
           </ul>
         </div>
       </section>
-
       <StepsSection />
-
-      <TeamSection />
-
       <PricingSection />
-      {`</Ubicación>`}
+      <TeamSection />
       <FAQSection />
+      <ContactSection />
     </>
   );
 }

@@ -3,3 +3,4 @@ export { FAQSection } from './faq-section';
 export { PricingSection } from './pricing-section';
 export { TeamSection } from './team-section';
 export { StepsSection } from './steps-section';
+export { ContactSection } from './contact-section';
