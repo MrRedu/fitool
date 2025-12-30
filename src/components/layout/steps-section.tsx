@@ -1,48 +1,6 @@
 import { Button } from '@/components/ui/button';
 import { Progress } from '@/components/ui/progress';
-
-interface Step {
-  id: string;
-  number: string;
-  title: string;
-  heading: string;
-  description: string;
-  progress: number;
-  duration: string;
-}
-
-const steps: Step[] = [
-  {
-    id: 'discovery',
-    number: '01',
-    title: 'Rookie',
-    heading: 'Adaptación y hábito',
-    description:
-      'Te familiarizarás con las máquinas y la técnica correcta. El enfoque principal es crear la disciplina de asistir y despertar tu metabolismo.',
-    progress: 25,
-    duration: 'Semanas 1 a 4',
-  },
-  {
-    id: 'transformation',
-    number: '02',
-    title: 'Amateur',
-    heading: 'Resultados visibles',
-    description:
-      'Tu fuerza aumenta notablemente y notarás cambios en tu composición corporal. Es el punto donde el ejercicio se convierte en un estilo de vida.',
-    progress: 60,
-    duration: '~12 semanas',
-  },
-  {
-    id: 'mastery',
-    number: '03',
-    title: 'Intermediate',
-    heading: 'Atleta y estilo de Vida',
-    description:
-      'Has alcanzado una versión física superior. Ahora el objetivo es el mantenimiento avanzado, la salud a largo plazo y la superación de récords personales.',
-    progress: 100,
-    duration: 'Meta cumplida',
-  },
-];
+import { STEPS_SECTION } from '@/lib/constants';
 
 export const StepsSection = () => {
   return (
@@ -76,7 +34,7 @@ export const StepsSection = () => {
           <div className="absolute left-0 top-[7px] hidden h-0.5 w-full bg-foreground md:block" />
 
           <div className="grid grid-cols-1 gap-12 md:grid-cols-3 md:gap-8">
-            {steps.map((step) => (
+            {STEPS_SECTION.map((step) => (
               <div key={step.id} className="relative pl-8 md:pl-0">
                 {/* Connector Dot */}
                 <div className="absolute left-0 top-[3px] h-4 w-4 rounded-full border-4 border-background bg-foreground md:left-0 md:top-0" />

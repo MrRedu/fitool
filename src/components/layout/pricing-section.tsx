@@ -1,12 +1,10 @@
 'use client';
 
-import { Check, ChevronDown, Info, X } from 'lucide-react';
+import {  ChevronDown, Info } from 'lucide-react';
 import { Fragment, useState } from 'react';
 
 import { cn } from '@/lib/utils';
 
-import { Badge } from '@/components/ui/badge';
-import { Button } from '@/components/ui/button';
 import {
   Collapsible,
   CollapsibleContent,
@@ -19,145 +17,10 @@ import {
   TooltipProvider,
   TooltipTrigger,
 } from '@/components/ui/tooltip';
-
-const plans = [
-  {
-    title: 'Restringido',
-    price: { monthly: '$30', annually: '$300' }, // Ejemplo de descuento anual
-    href: '#',
-    recommended: false,
-  },
-  {
-    title: 'Héroe',
-    price: { monthly: '$45', annually: '$450' },
-    href: '#',
-    recommended: false,
-  },
-  {
-    title: 'FiToolers',
-    price: { monthly: '$90', annually: '$900' },
-    href: '#',
-    recommended: true,
-  },
-  {
-    title: 'Enérgico',
-    price: { monthly: '$60', annually: '$600' }, // Basado en el paquete de 20 clases
-    href: '#',
-    recommended: false,
-  },
-];
-
-const featureMatrix = [
-  {
-    title: 'Beneficios incluidos (Todos los planes)',
-    features: [
-      {
-        title: 'Comodidades básicas',
-        info: 'Café gratis, Lockers, Seguridad y Wifi en todas las áreas.',
-        inclusions: [
-          { plan: 'Restringido', content: <Check className="size-5" /> },
-          { plan: 'Héroe', content: <Check className="size-5" /> },
-          { plan: 'FiToolers', content: <Check className="size-5" /> },
-          { plan: 'Enérgico', content: <Check className="size-5" /> },
-        ],
-      },
-      {
-        title: 'Instalaciones',
-        info: 'Acceso a duchas, vestidores y estacionamiento privado.',
-        inclusions: [
-          { plan: 'Restringido', content: <Check className="size-5" /> },
-          { plan: 'Héroe', content: <Check className="size-5" /> },
-          { plan: 'FiToolers', content: <Check className="size-5" /> },
-          { plan: 'Enérgico', content: <Check className="size-5" /> },
-        ],
-      },
-    ],
-  },
-  {
-    title: 'Áreas y disciplinas',
-    features: [
-      {
-        title: 'Musculación y Cardio',
-        inclusions: [
-          { plan: 'Restringido', content: <Check className="size-5" /> },
-          { plan: 'Héroe', content: <Check className="size-5" /> },
-          { plan: 'FiToolers', content: <Check className="size-5" /> },
-          {
-            plan: 'Enérgico',
-            content: <X className="size-5 text-muted-foreground" />,
-          },
-        ],
-      },
-      // {
-      //   title: 'Boxeo',
-      //   inclusions: [
-      //     { plan: 'Restringido', content: <Check className="size-5" /> },
-      //     {
-      //       plan: 'Héroe',
-      //       content: <X className="size-5 text-muted-foreground" />,
-      //     },
-      //     { plan: 'FiToolers', content: <Check className="size-5" /> },
-      //     {
-      //       plan: 'Enérgico',
-      //       content: <X className="size-5 text-muted-foreground" />,
-      //     },
-      //   ],
-      // },
-      {
-        title: 'Crossfit y Funcional',
-        inclusions: [
-          { plan: 'Restringido', content: <Check className="size-5" /> },
-          { plan: 'Héroe', content: <Check className="size-5" /> },
-          { plan: 'FiToolers', content: <Check className="size-5" /> },
-          {
-            plan: 'Enérgico',
-            content: <X className="size-5 text-muted-foreground" />,
-          },
-        ],
-      },
-      {
-        title: 'Ciclismo (Bike/Spinning)',
-        info: 'Xtreme Bike y Spinning convencional.',
-        inclusions: [
-          {
-            plan: 'Restringido',
-            content: <X className="size-5 text-muted-foreground" />,
-          },
-          {
-            plan: 'Héroe',
-            content: <X className="size-5 text-muted-foreground" />,
-          },
-          { plan: 'FiToolers', content: <Check className="size-5" /> },
-          { plan: 'Enérgico', content: <Check className="size-5" /> },
-        ],
-      },
-    ],
-  },
-  {
-    title: 'Condiciones de Acceso',
-    features: [
-      {
-        title: 'Horario Restringido',
-        info: 'Horario completo: Lunes a sábados de 6:00am hasta las 9:00pm.',
-        inclusions: [
-          { plan: 'Restringido', content: 'Solo de 11:30 a 1:30' },
-          { plan: 'Héroe', content: 'Horario Completo' },
-          { plan: 'FiToolers', content: 'Horario Completo' },
-          { plan: 'Enérgico', content: 'Por Clase' },
-        ],
-      },
-      {
-        title: 'Entrenador Personalizado',
-        inclusions: [
-          { plan: 'Restringido', content: <Check className="size-5" /> },
-          { plan: 'Héroe', content: <Check className="size-5" /> },
-          { plan: 'FiToolers', content: <Check className="size-5" /> },
-          { plan: 'Enérgico', content: 'Instructor de Clase' },
-        ],
-      },
-    ],
-  },
-];
+import {
+  FEATURE_MATRIX_PRICING_SECTION,
+  PLANS_PRICING_SECTION,
+} from '@/lib/constants';
 
 interface PricingProps {
   className?: string;
@@ -201,7 +64,7 @@ export const PricingSection = ({ className }: PricingProps) => {
                   </Tabs>
                 </div>
               </div>
-              {plans.map((plan) => (
+              {PLANS_PRICING_SECTION.map((plan) => (
                 <div
                   key={plan.title}
                   className="rounded-lg border border-border p-3 2xl:p-4"
@@ -228,7 +91,7 @@ export const PricingSection = ({ className }: PricingProps) => {
           </div>
         </div>
         <div className="space-y-8 lg:space-y-14">
-          {featureMatrix.map((category) => (
+          {FEATURE_MATRIX_PRICING_SECTION.map((category) => (
             <div key={category.title}>
               <h3 className="mb-6 text-lg font-medium lg:mb-3">
                 {category.title}

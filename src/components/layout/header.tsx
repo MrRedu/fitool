@@ -44,22 +44,7 @@ const TOOLS = [
   //   title: 'Settings',
   //   description: 'Configure your preferences',
   //   href: '#',
-  // },
-  // {
-  //   title: 'Integrations',
-  //   description: 'Connect with other tools',
-  //   href: '#',
-  // },
-  // {
-  //   title: 'Storage',
-  //   description: 'Manage your files',
-  //   href: '#',
-  // },
-  // {
-  //   title: 'Support',
-  //   description: 'Get help when needed',
-  //   href: '#',
-  // },
+  // }
 ];
 
 const NAVS = [
