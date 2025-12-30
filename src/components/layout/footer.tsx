@@ -29,7 +29,7 @@ const SOCIAL_LINKS = [
 const LINKS = [
   {
     name: 'Inicio',
-    href: '#',
+    href: '/',
   },
   {
     name: 'Herramientas',
@@ -41,21 +41,17 @@ const LINKS = [
   },
   {
     name: 'Membresías',
-    href: '#',
+    href: '/#pricing',
   },
   {
     name: 'Contacto',
-    href: '#',
-  },
-  {
-    name: 'Ubicación',
-    href: '#',
+    href: '/#contact',
   },
 ];
 
 export const Footer = () => {
   return (
-    <section className="dark bg-background py-32 text-foreground w-full">
+    <section className="dark bg-background text-foreground w-full px-4 md:px-6 lg:px-8 py-32">
       <div className="container mx-auto w-full">
         <div className="flex flex-col justify-between gap-15 lg:flex-row">
           <div className="flex flex-col gap-10">
@@ -63,7 +59,7 @@ export const Footer = () => {
               ¡Desbloquea tu máximo potencial ahora!
             </p>
             <div className="space-y-1 text-sm font-light tracking-tight lg:text-base">
-              <p>Get Support: </p>
+              <p>Obtén asistencia: </p>
               <a href="#">hi@fitool.com</a>
             </div>
           </div>
@@ -97,7 +93,7 @@ export const Footer = () => {
         <div className="mt-20 flex flex-col justify-between gap-15 lg:flex-row">
           <div className="flex w-full max-w-md flex-col gap-10">
             <div className="space-y-1 text-sm font-light tracking-tight lg:text-base">
-              <p>Sign up for newsletter: </p>
+              <p>Suscríbete al boletín informativo:</p>
               <form
                 className="flex w-full items-end border-b border-b-foreground/10"
                 action="#"
@@ -114,7 +110,7 @@ export const Footer = () => {
             </div>
           </div>
           <div className="grid w-full max-w-xs grid-cols-2 gap-10 text-sm font-light lg:text-base">
-            <div className="w-32">Aragua, 2101 Venezuela</div>
+            <div className="w-32">Aragua, 2117 Venezuela</div>
             <ul className="space-y-1">
               <li>
                 <a

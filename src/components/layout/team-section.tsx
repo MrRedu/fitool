@@ -7,39 +7,7 @@ import {
   CarouselPrevious,
 } from '@/components/ui/carousel';
 import { cn } from '@/lib/utils';
-
-const team = [
-  {
-    name: 'John Doe',
-    role: 'Entrenador',
-    image: '/hero/1.webp',
-  },
-  {
-    name: 'Jane Smith',
-    role: 'Entrenador',
-    image: '/hero/1.webp',
-  },
-  {
-    name: 'Mike Johnson',
-    role: 'Entrenador',
-    image: '/hero/1.webp',
-  },
-  {
-    name: 'Sarah Williams',
-    role: 'Entrenador',
-    image: '/hero/1.webp',
-  },
-  {
-    name: 'David Chen',
-    role: 'Entrenador',
-    image: '/hero/1.webp',
-  },
-  {
-    name: 'Emily Brown',
-    role: 'Entrenador',
-    image: '/hero/1.webp',
-  },
-];
+import { MEMBERS_TEAM_SECTION } from '@/lib/constants';
 
 export function TeamSection() {
   return (
@@ -63,7 +31,7 @@ export function TeamSection() {
           className="w-full"
         >
           <CarouselContent className="-ml-4 sm:-ml-6">
-            {team.map((member, index) => (
+            {MEMBERS_TEAM_SECTION.map((member, index) => (
               <CarouselItem
                 key={index}
                 className="pl-4 sm:pl-6 basis-full sm:basis-1/2 lg:basis-1/4"

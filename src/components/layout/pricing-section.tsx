@@ -1,12 +1,10 @@
 'use client';
 
-import { Check, ChevronDown, Info, X } from 'lucide-react';
+import {  ChevronDown, Info } from 'lucide-react';
 import { Fragment, useState } from 'react';
 
 import { cn } from '@/lib/utils';
 
-import { Badge } from '@/components/ui/badge';
-import { Button } from '@/components/ui/button';
 import {
   Collapsible,
   CollapsibleContent,
@@ -19,152 +17,10 @@ import {
   TooltipProvider,
   TooltipTrigger,
 } from '@/components/ui/tooltip';
-
-const plans = [
-  {
-    title: 'Restringido',
-    price: { monthly: '$30', annually: '$360' },
-    href: '#',
-    recommended: false,
-  },
-  {
-    title: 'Héroe',
-    price: { monthly: '$45', annually: '$500' },
-    href: '#',
-    recommended: false,
-  },
-  {
-    title: 'Jomers',
-    price: { monthly: '$90', annually: '$1.000' },
-    href: '#',
-    recommended: true,
-  },
-  {
-    title: 'Enérgico',
-    price: { monthly: '$60', annually: '$720' },
-    href: '#',
-    recommended: false,
-  },
-];
-
-const featureMatrix = [
-  {
-    title: 'Overview',
-    features: [
-      {
-        title: 'Always included reature',
-        inclusions: [
-          {
-            plan: 'Free',
-            content: 'Lorem ipsum dolor sit amet consectetur adipisicing elit.',
-          },
-          {
-            plan: 'Basic',
-            content: 'Lorem ipsum dolor sit amet consectetur adipisicing elit.',
-          },
-          {
-            plan: 'Teams',
-            content: 'Lorem ipsum dolor sit amet consectetur adipisicing elit.',
-          },
-          {
-            plan: 'Enterprise',
-            content: 'Lorem ipsum dolor sit amet consectetur adipisicing elit.',
-          },
-        ],
-      },
-      {
-        title: 'Number of products',
-        info: 'Help text',
-        inclusions: [
-          { plan: 'Free', content: '1' },
-          { plan: 'Basic', content: '1' },
-          { plan: 'Teams', content: '3' },
-          { plan: 'Enterprise', content: '5' },
-        ],
-      },
-      {
-        title: 'Number of transactions',
-        info: 'Help text',
-        inclusions: [
-          { plan: 'Free', content: '30 monthly' },
-          { plan: 'Basic', content: 'Unlimited' },
-          { plan: 'Teams', content: 'Unlimited' },
-          { plan: 'Enterprise', content: 'Unlimited' },
-        ],
-      },
-    ],
-  },
-  {
-    title: 'Other features',
-    features: [
-      {
-        title: 'Basic feature',
-        inclusions: [
-          {
-            plan: 'Free',
-            content: <Check className="size-4 lg:size-5" />,
-          },
-          {
-            plan: 'Basic',
-            content: <Check className="size-4 lg:size-5" />,
-          },
-          {
-            plan: 'Teams',
-            content: <Check className="size-4 lg:size-5" />,
-          },
-          {
-            plan: 'Enterprise',
-            content: <Check className="size-4 lg:size-5" />,
-          },
-        ],
-      },
-      {
-        title: 'Enterprise feature',
-        info: 'Hello',
-        inclusions: [
-          {
-            plan: 'Free',
-            content: <X className="size-4 text-muted-foreground lg:size-5" />,
-          },
-          {
-            plan: 'Basic',
-            content: <X className="size-4 text-muted-foreground lg:size-5" />,
-          },
-          {
-            plan: 'Teams',
-            content: <X className="size-4 text-muted-foreground lg:size-5" />,
-          },
-          {
-            plan: 'Enterprise',
-            content: <Check className="size-5" />,
-          },
-        ],
-      },
-      {
-        title: 'Optional feature',
-        info: 'Hello',
-        inclusions: [
-          {
-            plan: 'Free',
-            content: <X className="size-4 text-muted-foreground lg:size-5" />,
-          },
-          {
-            plan: 'Basic',
-            content: <X className="size-4 text-muted-foreground lg:size-5" />,
-          },
-          {
-            plan: 'Teams',
-            content: <Badge>Add-on</Badge>,
-          },
-          {
-            plan: 'Enterprise',
-            content: <Badge>Add-on</Badge>,
-          },
-        ],
-      },
-    ],
-  },
-];
+import {
+  FEATURE_MATRIX_PRICING_SECTION,
+  PLANS_PRICING_SECTION,
+} from '@/lib/constants';
 
 interface PricingProps {
   className?: string;
@@ -182,10 +38,10 @@ export const PricingSection = ({ className }: PricingProps) => {
         <div className="grid grid-cols-2 gap-y-12 md:gap-y-16">
           <div className="col-span-2 flex flex-col lg:col-span-1">
             <h2 className="my-6 text-3xl font-semibold text-pretty md:text-4xl xl:text-5xl">
-              Planes
+              Membresías
             </h2>
             <p className="text-muted-foreground lg:text-xl">
-              Tenemos el que necesitas.
+              Tenemos lo que necesitas.
             </p>
           </div>
         </div>
@@ -208,7 +64,7 @@ export const PricingSection = ({ className }: PricingProps) => {
                   </Tabs>
                 </div>
               </div>
-              {plans.map((plan) => (
+              {PLANS_PRICING_SECTION.map((plan) => (
                 <div
                   key={plan.title}
                   className="rounded-lg border border-border p-3 2xl:p-4"
@@ -220,7 +76,7 @@ export const PricingSection = ({ className }: PricingProps) => {
                     {plan.price[billing]}
                     <span className="hidden 2xl:inline"> / monthly</span>
                   </p>
-                  <Button
+                  {/* <Button
                     variant={plan.recommended ? 'default' : 'outline'}
                     className="w-full"
                   >
@@ -228,14 +84,14 @@ export const PricingSection = ({ className }: PricingProps) => {
                     <span className="hidden 2xl:inline">
                       Get started for free
                     </span>
-                  </Button>
+                  </Button> */}
                 </div>
               ))}
             </div>
           </div>
         </div>
         <div className="space-y-8 lg:space-y-14">
-          {featureMatrix.map((category) => (
+          {FEATURE_MATRIX_PRICING_SECTION.map((category) => (
             <div key={category.title}>
               <h3 className="mb-6 text-lg font-medium lg:mb-3">
                 {category.title}
@@ -321,7 +177,7 @@ export const PricingSection = ({ className }: PricingProps) => {
           ))}
         </div>
         <p className="mt-4 hidden text-xs text-muted-foreground md:block">
-          * Caveats and other conditions
+          * Sujeto a cambios y condiciones
         </p>
       </div>
     </section>

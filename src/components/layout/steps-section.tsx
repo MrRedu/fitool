@@ -1,55 +1,13 @@
 import { Button } from '@/components/ui/button';
 import { Progress } from '@/components/ui/progress';
-
-interface Step {
-  id: string;
-  number: string;
-  title: string;
-  heading: string;
-  description: string;
-  progress: number;
-  duration: string;
-}
-
-const steps: Step[] = [
-  {
-    id: 'discovery',
-    number: '01',
-    title: 'Rookie',
-    heading: 'Adaptación y Hábito',
-    description:
-      'Te familiarizarás con las máquinas y la técnica correcta. El enfoque principal es crear la disciplina de asistir y despertar tu metabolismo.',
-    progress: 25,
-    duration: 'Semanas 1 a 4',
-  },
-  {
-    id: 'transformation',
-    number: '02',
-    title: 'Amateur',
-    heading: 'Resultados Visibles',
-    description:
-      'Tu fuerza aumenta notablemente y notarás cambios en tu composición corporal. Es el punto donde el ejercicio se convierte en un estilo de vida.',
-    progress: 60,
-    duration: '~12 semanas',
-  },
-  {
-    id: 'mastery',
-    number: '03',
-    title: 'Intermediate',
-    heading: 'Atleta y Estilo de Vida',
-    description:
-      'Has alcanzado una versión física superior. Ahora el objetivo es el mantenimiento avanzado, la salud a largo plazo y la superación de récords personales.',
-    progress: 100,
-    duration: 'Meta cumplida',
-  },
-];
+import { STEPS_SECTION } from '@/lib/constants';
 
 export const StepsSection = () => {
   return (
     <div className="mx-auto container w-full px-4 md:px-6 lg:px-8 py-32">
       <div className="mb-12 space-y-4 text-left">
         <h1 className="text-4xl font-bold tracking-tight text-foreground md:text-5xl">
-          Tu Camino al Cambio Físico
+          Tu camino al cambio físico
         </h1>
         <p className="max-w-2xl text-lg text-muted-foreground">
           Conoce las etapas de tu transformación. Desde el primer día hasta
@@ -76,7 +34,7 @@ export const StepsSection = () => {
           <div className="absolute left-0 top-[7px] hidden h-0.5 w-full bg-foreground md:block" />
 
           <div className="grid grid-cols-1 gap-12 md:grid-cols-3 md:gap-8">
-            {steps.map((step) => (
+            {STEPS_SECTION.map((step) => (
               <div key={step.id} className="relative pl-8 md:pl-0">
                 {/* Connector Dot */}
                 <div className="absolute left-0 top-[3px] h-4 w-4 rounded-full border-4 border-background bg-foreground md:left-0 md:top-0" />
