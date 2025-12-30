@@ -110,7 +110,7 @@ export const Footer = () => {
             </div>
           </div>
           <div className="grid w-full max-w-xs grid-cols-2 gap-10 text-sm font-light lg:text-base">
-            <div className="w-32">Aragua, 2101 Venezuela</div>
+            <div className="w-32">Aragua, 2117 Venezuela</div>
             <ul className="space-y-1">
               <li>
                 <a
