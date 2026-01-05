@@ -33,25 +33,24 @@ import Image from 'next/image'
 const TOOLS = [
   {
     title: 'Herramientas',
-    description: 'Overview of your activity',
-    href: '#',
+    description: 'Mejora tu flujo de entrenamiento.',
+    href: '/tools',
   },
   {
     title: 'Calculadoras',
-    description: 'Track your performance',
-    href: '#',
+    description: 'Calcula tus métricas de inmediato.',
+    href: '/calculators',
   },
-  // {
-  //   title: 'Settings',
-  //   description: 'Configure your preferences',
-  //   href: '#',
-  // }
 ]
 
 const NAVS = [
   {
     title: 'Membresías',
     href: '/#pricing',
+  },
+  {
+    title: 'Equipo',
+    href: '/#team',
   },
   {
     title: 'Contacto',

@@ -11,7 +11,7 @@ import { MEMBERS_TEAM_SECTION } from '@/lib/constants'
 
 export function TeamSection() {
   return (
-    <section className="md:px-6 lg:px-8 py-32">
+    <section className="md:px-6 lg:px-8 py-32" id="team">
       <div className="mx-auto container w-full px-6 lg:px-8">
         <div className="mx-auto max-w-2xl text-center mb-16">
           <h2 className="text-3xl font-bold tracking-tight text-foreground sm:text-4xl">
