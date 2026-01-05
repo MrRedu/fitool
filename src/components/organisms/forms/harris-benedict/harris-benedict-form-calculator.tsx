@@ -1,4 +1,4 @@
-import { Button } from '@/components/ui/button';
+import { Button } from '@/components/ui/button'
 import {
   Form,
   FormControl,
@@ -6,23 +6,23 @@ import {
   FormItem,
   FormLabel,
   FormMessage,
-} from '@/components/ui/form';
-import { Input } from '@/components/ui/input';
+} from '@/components/ui/form'
+import { Input } from '@/components/ui/input'
 import {
   Select,
   SelectContent,
   SelectItem,
   SelectTrigger,
   SelectValue,
-} from '@/components/ui/select';
+} from '@/components/ui/select'
 import {
   ACTIVITY_LEVELS,
   GENDERS_OPTIONS,
   OBJECTIVE_OPTIONS,
-} from '@/lib/constants';
+} from '@/lib/constants'
 
-import { type HarrisBenedictFormCalculatorProps } from './harris-benedict-form-calculator.model';
-import { Badge } from '@/components/ui/badge';
+import { type HarrisBenedictFormCalculatorProps } from './harris-benedict-form-calculator.model'
+import { Badge } from '@/components/ui/badge'
 
 export const HarrisBenedictFormCalculator = ({
   onSubmit,
@@ -47,7 +47,7 @@ export const HarrisBenedictFormCalculator = ({
                   </SelectTrigger>
                 </FormControl>
                 <SelectContent>
-                  {GENDERS_OPTIONS.map((gender) => (
+                  {GENDERS_OPTIONS.map(gender => (
                     <SelectItem key={gender.value} value={gender.value}>
                       {gender.label}
                     </SelectItem>
@@ -134,7 +134,7 @@ export const HarrisBenedictFormCalculator = ({
                   </SelectTrigger>
                 </FormControl>
                 <SelectContent>
-                  {ACTIVITY_LEVELS.map((level) => (
+                  {ACTIVITY_LEVELS.map(level => (
                     <SelectItem key={level.value} value={level.value}>
                       {level.label}
                     </SelectItem>
@@ -159,7 +159,7 @@ export const HarrisBenedictFormCalculator = ({
                   </SelectTrigger>
                 </FormControl>
                 <SelectContent>
-                  {OBJECTIVE_OPTIONS.map((objetive) => (
+                  {OBJECTIVE_OPTIONS.map(objetive => (
                     <SelectItem key={objetive.value} value={objetive.value}>
                       {objetive.label}
                     </SelectItem>
@@ -176,5 +176,5 @@ export const HarrisBenedictFormCalculator = ({
         </Button>
       </form>
     </Form>
-  );
-};
+  )
+}

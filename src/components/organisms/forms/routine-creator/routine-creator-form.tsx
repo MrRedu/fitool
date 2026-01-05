@@ -1,7 +1,7 @@
-'use client';
+'use client'
 
-import { Button } from '@/components/ui/button';
-import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
+import { Button } from '@/components/ui/button'
+import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card'
 import {
   Form,
   FormControl,
@@ -9,25 +9,25 @@ import {
   FormItem,
   FormLabel,
   FormMessage,
-} from '@/components/ui/form';
-import { Input } from '@/components/ui/input';
+} from '@/components/ui/form'
+import { Input } from '@/components/ui/input'
 import {
   Select,
   SelectContent,
   SelectItem,
   SelectTrigger,
   SelectValue,
-} from '@/components/ui/select';
-import { Textarea } from '@/components/ui/textarea';
-import { useRoutineCreator } from '@/hooks/routine-creator/use-routine-creator';
+} from '@/components/ui/select'
+import { Textarea } from '@/components/ui/textarea'
+import { useRoutineCreator } from '@/hooks/routine-creator/use-routine-creator'
 import {
   EXERCISE_DURATIONS_OPTIONS,
   UNIT_WEIGHT_OPTIONS,
-} from '@/lib/constants';
-import { Plus } from 'lucide-react';
+} from '@/lib/constants'
+import { Plus } from 'lucide-react'
 
 export const RoutineCreatorForm = () => {
-  const { form, onSubmit } = useRoutineCreator();
+  const { form, onSubmit } = useRoutineCreator()
 
   return (
     <Card className="h-fit">
@@ -85,7 +85,7 @@ export const RoutineCreatorForm = () => {
                         </SelectTrigger>
                       </FormControl>
                       <SelectContent>
-                        {EXERCISE_DURATIONS_OPTIONS.map((duration) => (
+                        {EXERCISE_DURATIONS_OPTIONS.map(duration => (
                           <SelectItem
                             key={duration.value}
                             value={duration.value}
@@ -146,7 +146,7 @@ export const RoutineCreatorForm = () => {
                         </SelectTrigger>
                       </FormControl>
                       <SelectContent>
-                        {UNIT_WEIGHT_OPTIONS.map((weight) => (
+                        {UNIT_WEIGHT_OPTIONS.map(weight => (
                           <SelectItem key={weight.value} value={weight.value}>
                             {weight.label}
                           </SelectItem>
@@ -186,5 +186,5 @@ export const RoutineCreatorForm = () => {
         </Form>
       </CardContent>
     </Card>
-  );
-};
+  )
+}

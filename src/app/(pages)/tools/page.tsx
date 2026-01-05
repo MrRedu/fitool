@@ -5,5 +5,5 @@ export default function ToolsPage() {
     <>
       <h2>{`</ToolsPage>`}</h2>
     </>
-  );
+  )
 }

@@ -1,7 +1,7 @@
-import { ArrowRight, ArrowUpRight } from 'lucide-react';
-import Link from 'next/link';
-import { Input } from '@/components/ui/input';
-import { Button } from '@/components/ui/button';
+import { ArrowRight, ArrowUpRight } from 'lucide-react'
+import Link from 'next/link'
+import { Input } from '@/components/ui/input'
+import { Button } from '@/components/ui/button'
 
 const SOCIAL_LINKS = [
   // {
@@ -24,7 +24,7 @@ const SOCIAL_LINKS = [
   //   name: 'Twitter',
   //   href: '#',
   // },
-];
+]
 
 const LINKS = [
   {
@@ -47,7 +47,7 @@ const LINKS = [
     name: 'Contacto',
     href: '/#contact',
   },
-];
+]
 
 export const Footer = () => {
   return (
@@ -65,7 +65,7 @@ export const Footer = () => {
           </div>
           <div className="grid w-full max-w-xs grid-cols-2 gap-10 text-sm font-light lg:text-base">
             <ul className="space-y-1">
-              {LINKS.map((link) => (
+              {LINKS.map(link => (
                 <li key={link.name}>
                   <Link
                     href={link.href}
@@ -77,7 +77,7 @@ export const Footer = () => {
               ))}
             </ul>
             <ul className="space-y-1">
-              {SOCIAL_LINKS.map((link) => (
+              {SOCIAL_LINKS.map(link => (
                 <li key={link.name}>
                   <Link
                     href={link.href}
@@ -136,5 +136,5 @@ export const Footer = () => {
         </div>
       </div>
     </section>
-  );
-};
+  )
+}

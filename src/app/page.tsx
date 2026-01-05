@@ -1,6 +1,6 @@
-import Link from 'next/link';
-import { Typography } from '@/components/ui/typography';
-import { CALCULATORS, TOOLS } from '@/lib/constants';
+import Link from 'next/link'
+import { Typography } from '@/components/ui/typography'
+import { CALCULATORS, TOOLS } from '@/lib/constants'
 import {
   HeroSection,
   FAQSection,
@@ -8,10 +8,10 @@ import {
   TeamSection,
   StepsSection,
   ContactSection,
-} from '@/components/layout';
-import { Header } from '@/components/layout/header';
-import Image from 'next/image';
-import { Suspense } from 'react';
+} from '@/components/layout'
+import { Header } from '@/components/layout/header'
+import Image from 'next/image'
+import { Suspense } from 'react'
 
 export default function HomePage() {
   return (
@@ -70,5 +70,5 @@ export default function HomePage() {
       <FAQSection />
       <ContactSection />
     </>
-  );
+  )
 }

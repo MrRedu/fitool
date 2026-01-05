@@ -1,49 +1,49 @@
-'use client';
+'use client'
 
-import { useState } from 'react';
-import { Dumbbell, Share, Trash2, GripVertical, Users } from 'lucide-react';
-import { Button } from '../ui/button';
-import { Card, CardContent, CardHeader, CardTitle } from '../ui/card';
-import { Badge } from '../ui/badge';
+import { useState } from 'react'
+import { Dumbbell, Share, Trash2, GripVertical, Users } from 'lucide-react'
+import { Button } from '../ui/button'
+import { Card, CardContent, CardHeader, CardTitle } from '../ui/card'
+import { Badge } from '../ui/badge'
 import {
   useExerciseListStore,
   type ExerciseGroup,
-} from '@/stores/exercises.store';
-import { exportToWhatsApp } from '@/lib/utils';
-import { Typography } from '../ui/typography';
+} from '@/stores/exercises.store'
+import { exportToWhatsApp } from '@/lib/utils'
+import { Typography } from '../ui/typography'
 
 export const ExerciseList = () => {
-  const routineItems = useExerciseListStore((state) => state.routineItems);
-  const removeItem = useExerciseListStore((state) => state.removeItem);
+  const routineItems = useExerciseListStore(state => state.routineItems)
+  const removeItem = useExerciseListStore(state => state.removeItem)
   const removeExerciseFromGroup = useExerciseListStore(
-    (state) => state.removeExerciseFromGroup
-  );
-  const createGroup = useExerciseListStore((state) => state.createGroup);
-  const moveItem = useExerciseListStore((state) => state.moveItem);
+    state => state.removeExerciseFromGroup
+  )
+  const createGroup = useExerciseListStore(state => state.createGroup)
+  const moveItem = useExerciseListStore(state => state.moveItem)
 
-  const [draggedId, setDraggedId] = useState<string | null>(null);
-  const [dragOverId, setDragOverId] = useState<string | null>(null);
+  const [draggedId, setDraggedId] = useState<string | null>(null)
+  const [dragOverId, setDragOverId] = useState<string | null>(null)
 
-  const handleDragStart = (id: string) => setDraggedId(id);
+  const handleDragStart = (id: string) => setDraggedId(id)
   const handleDragOver = (id: string, e: React.DragEvent) => {
-    e.preventDefault();
-    setDragOverId(id);
-  };
-  const handleDragLeave = () => setDragOverId(null);
+    e.preventDefault()
+    setDragOverId(id)
+  }
+  const handleDragLeave = () => setDragOverId(null)
 
   const handleDrop = (targetId: string) => {
     if (!draggedId || draggedId === targetId) {
-      setDraggedId(null);
-      setDragOverId(null);
-      return;
+      setDraggedId(null)
+      setDragOverId(null)
+      return
     }
-    const draggedItem = routineItems.find((item) => item.id === draggedId);
-    const targetItem = routineItems.find((item) => item.id === targetId);
+    const draggedItem = routineItems.find(item => item.id === draggedId)
+    const targetItem = routineItems.find(item => item.id === targetId)
 
     if (!draggedItem || !targetItem) {
-      setDraggedId(null);
-      setDragOverId(null);
-      return;
+      setDraggedId(null)
+      setDragOverId(null)
+      return
     }
 
     // If dropping on a group, add to that group
@@ -52,32 +52,32 @@ export const ExerciseList = () => {
       const updatedGroup: ExerciseGroup = {
         ...targetItem,
         exercises: [...targetItem.exercises, draggedItem],
-      };
+      }
       // Remove dragged from list, update group
       const newItems = routineItems
-        .filter((item) => item.id !== draggedId)
-        .map((item) => (item.id === targetId ? updatedGroup : item));
-      useExerciseListStore.setState({ routineItems: newItems });
+        .filter(item => item.id !== draggedId)
+        .map(item => (item.id === targetId ? updatedGroup : item))
+      useExerciseListStore.setState({ routineItems: newItems })
     }
     // If dropping an individual exercise on another individual exercise, create a group
     else if (!('exercises' in draggedItem) && !('exercises' in targetItem)) {
-      createGroup([targetItem.id, draggedItem.id]);
+      createGroup([targetItem.id, draggedItem.id])
     }
     // Otherwise, just reorder
     else {
-      moveItem(draggedId, targetId);
+      moveItem(draggedId, targetId)
     }
 
-    setDraggedId(null);
-    setDragOverId(null);
-  };
+    setDraggedId(null)
+    setDragOverId(null)
+  }
 
   const getTotalExercises = () =>
     routineItems.reduce(
       (total, item) =>
         total + ('exercises' in item ? item.exercises.length : 1),
       0
-    );
+    )
 
   return (
     <Card>
@@ -112,7 +112,7 @@ export const ExerciseList = () => {
                 key={item.id}
                 draggable
                 onDragStart={() => handleDragStart(item.id)}
-                onDragOver={(e) => handleDragOver(item.id, e)}
+                onDragOver={e => handleDragOver(item.id, e)}
                 onDragLeave={handleDragLeave}
                 onDrop={() => handleDrop(item.id)}
                 className={`border rounded-lg p-4 bg-card cursor-move transition-all duration-200 ${
@@ -131,8 +131,8 @@ export const ExerciseList = () => {
                           {item.exercises.length === 2
                             ? 'BISERIE'
                             : item.exercises.length === 3
-                            ? 'TRISERIE'
-                            : `SUPERSET (${item.exercises.length})`}
+                              ? 'TRISERIE'
+                              : `SUPERSET (${item.exercises.length})`}
                         </Badge>
                         <span className="text-xs text-muted-foreground">
                           Sin descanso entre ejercicios
@@ -246,5 +246,5 @@ export const ExerciseList = () => {
         )}
       </CardContent>
     </Card>
-  );
-};
+  )
+}

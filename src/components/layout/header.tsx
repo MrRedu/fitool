@@ -1,16 +1,16 @@
-'use client';
+'use client'
 
-import { MenuIcon } from 'lucide-react';
+import { MenuIcon } from 'lucide-react'
 
-import { cn } from '@/lib/utils';
+import { cn } from '@/lib/utils'
 
 import {
   Accordion,
   AccordionContent,
   AccordionItem,
   AccordionTrigger,
-} from '@/components/ui/accordion';
-import { Button } from '@/components/ui/button';
+} from '@/components/ui/accordion'
+import { Button } from '@/components/ui/button'
 import {
   NavigationMenu,
   NavigationMenuContent,
@@ -19,16 +19,16 @@ import {
   NavigationMenuList,
   NavigationMenuTrigger,
   navigationMenuTriggerStyle,
-} from '@/components/ui/navigation-menu';
+} from '@/components/ui/navigation-menu'
 import {
   Sheet,
   SheetContent,
   SheetHeader,
   SheetTitle,
   SheetTrigger,
-} from '@/components/ui/sheet';
-import Link from 'next/link';
-import Image from 'next/image';
+} from '@/components/ui/sheet'
+import Link from 'next/link'
+import Image from 'next/image'
 
 const TOOLS = [
   {
@@ -46,7 +46,7 @@ const TOOLS = [
   //   description: 'Configure your preferences',
   //   href: '#',
   // }
-];
+]
 
 const NAVS = [
   {
@@ -57,10 +57,10 @@ const NAVS = [
     title: 'Contacto',
     href: '/#contact',
   },
-];
+]
 
 interface HeaderProps {
-  className?: string;
+  className?: string
 }
 
 export const Header = ({ className }: HeaderProps) => {
@@ -72,10 +72,12 @@ export const Header = ({ className }: HeaderProps) => {
       <div className="container w-full mx-auto">
         <nav className="flex items-center justify-between">
           <Link href="/" className="flex items-center gap-2">
-            <img
+            <Image
               src="/fitool.svg"
               className="max-h-8 w-full"
               alt="FiTool logo"
+              width={320}
+              height={32}
             />
             <span className="text-lg font-semibold tracking-tighter sr-only">
               FiTool
@@ -196,5 +198,5 @@ export const Header = ({ className }: HeaderProps) => {
         </nav>
       </div>
     </section>
-  );
-};
+  )
+}

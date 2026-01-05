@@ -1,4 +1,4 @@
-import { Clock, Heart, Home, Wallet } from 'lucide-react';
+import { Clock, Heart, Home, Wallet } from 'lucide-react'
 
 export const FAQSection = () => {
   return (
@@ -53,5 +53,5 @@ export const FAQSection = () => {
         </div>
       </div>
     </section>
-  );
-};
+  )
+}

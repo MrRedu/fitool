@@ -1,13 +1,13 @@
-import Image from 'next/image';
+import Image from 'next/image'
 import {
   Carousel,
   CarouselContent,
   CarouselItem,
   CarouselNext,
   CarouselPrevious,
-} from '@/components/ui/carousel';
-import { cn } from '@/lib/utils';
-import { MEMBERS_TEAM_SECTION } from '@/lib/constants';
+} from '@/components/ui/carousel'
+import { cn } from '@/lib/utils'
+import { MEMBERS_TEAM_SECTION } from '@/lib/constants'
 
 export function TeamSection() {
   return (
@@ -70,5 +70,5 @@ export function TeamSection() {
         </Carousel>
       </div>
     </section>
-  );
+  )
 }

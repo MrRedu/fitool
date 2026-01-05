@@ -1,33 +1,33 @@
-'use client';
+'use client'
 
-import { ChevronDown, Info } from 'lucide-react';
-import { Fragment, useState } from 'react';
+import { ChevronDown, Info } from 'lucide-react'
+import { Fragment, useState } from 'react'
 
-import { cn } from '@/lib/utils';
+import { cn } from '@/lib/utils'
 
 import {
   Collapsible,
   CollapsibleContent,
   CollapsibleTrigger,
-} from '@/components/ui/collapsible';
-import { Tabs, TabsList, TabsTrigger } from '@/components/ui/tabs';
+} from '@/components/ui/collapsible'
+import { Tabs, TabsList, TabsTrigger } from '@/components/ui/tabs'
 import {
   Tooltip,
   TooltipContent,
   TooltipProvider,
   TooltipTrigger,
-} from '@/components/ui/tooltip';
+} from '@/components/ui/tooltip'
 import {
   FEATURE_MATRIX_PRICING_SECTION,
   PLANS_PRICING_SECTION,
-} from '@/lib/constants';
+} from '@/lib/constants'
 
 interface PricingProps {
-  className?: string;
+  className?: string
 }
 
 export const PricingSection = ({ className }: PricingProps) => {
-  const [billing, setBilling] = useState<'monthly' | 'annually'>('monthly');
+  const [billing, setBilling] = useState<'monthly' | 'annually'>('monthly')
 
   return (
     <section
@@ -64,7 +64,7 @@ export const PricingSection = ({ className }: PricingProps) => {
                   </Tabs>
                 </div>
               </div>
-              {PLANS_PRICING_SECTION.map((plan) => (
+              {PLANS_PRICING_SECTION.map(plan => (
                 <div
                   key={plan.title}
                   className="rounded-lg border border-border p-3 2xl:p-4"
@@ -91,14 +91,14 @@ export const PricingSection = ({ className }: PricingProps) => {
           </div>
         </div>
         <div className="space-y-8 lg:space-y-14">
-          {FEATURE_MATRIX_PRICING_SECTION.map((category) => (
+          {FEATURE_MATRIX_PRICING_SECTION.map(category => (
             <div key={category.title}>
               <h3 className="mb-6 text-lg font-medium lg:mb-3">
                 {category.title}
               </h3>
               <div className="space-y-4 lg:space-y-0">
                 <TooltipProvider delayDuration={150}>
-                  {category.features.map((feature) => (
+                  {category.features.map(feature => (
                     <Fragment key={feature.title}>
                       <dl className="hidden grid-cols-6 gap-6 border-b border-border lg:grid">
                         <dt className="col-span-2 justify-between py-4 pb-4">
@@ -116,7 +116,7 @@ export const PricingSection = ({ className }: PricingProps) => {
                             )}
                           </Tooltip>
                         </dt>
-                        {feature.inclusions.map((inclusion) => (
+                        {feature.inclusions.map(inclusion => (
                           <dd
                             key={inclusion.plan}
                             className="hidden py-4 text-sm text-muted-foreground lg:block"
@@ -155,7 +155,7 @@ export const PricingSection = ({ className }: PricingProps) => {
                             </dt>
                           </CollapsibleTrigger>
                           <CollapsibleContent>
-                            {feature.inclusions.map((inclusion) => (
+                            {feature.inclusions.map(inclusion => (
                               <dd
                                 key={inclusion.plan}
                                 className="flex items-center border-b border-border py-3 text-xs text-muted-foreground last:border-b-0 md:py-3.5"
@@ -181,5 +181,5 @@ export const PricingSection = ({ className }: PricingProps) => {
         </p>
       </div>
     </section>
-  );
-};
+  )
+}

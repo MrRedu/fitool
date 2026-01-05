@@ -1,7 +1,7 @@
 // interface CalculatorHarrisBenedictPageProps {}
 
-import { HarrisBenedictCalculator } from '@/components/organisms/calculators/harris-benedict-calculator';
-import { Typography } from '@/components/ui/typography';
+import { HarrisBenedictCalculator } from '@/components/organisms/calculators/harris-benedict-calculator'
+import { Typography } from '@/components/ui/typography'
 
 export default function CalculatorHarrisBenedictPage() {
   return (
@@ -124,5 +124,5 @@ export default function CalculatorHarrisBenedictPage() {
         </div>
       </article>
     </>
-  );
+  )
 }

@@ -5,5 +5,5 @@ export default function CalculatorsPage() {
     <>
       <h2>{`</CalculatorsPage>`}</h2>
     </>
-  );
+  )
 }
