@@ -5,6 +5,7 @@ import { motion } from 'motion/react';
 import { Button } from '@/components/ui/button';
 import { MarqueeRow } from '@/components/molecules/marquee-row';
 import { IMAGES_HERO_SECTION } from '@/lib/constants';
+import Image from 'next/image';
 
 export function HeroSection() {
   return (
@@ -12,9 +13,11 @@ export function HeroSection() {
       {/* Top Row - Moving Right */}
       <MarqueeRow direction="right" speed={50}>
         {IMAGES_HERO_SECTION.map(({ src, alt }) => (
-          <img
+          <Image
             key={src}
             alt={alt}
+            width={800}
+            height={400}
             className="min-h-[300px] max-h-[50svh] h-full w-full cover rounded grayscale"
             src={src}
           />
@@ -24,9 +27,11 @@ export function HeroSection() {
       {/* Bottom Row - Moving Left */}
       <MarqueeRow direction="left" speed={60}>
         {IMAGES_HERO_SECTION.map(({ src, alt }) => (
-          <img
+          <Image
             key={src}
             alt={alt}
+            width={300}
+            height={500}
             className="min-h-[300px] max-h-[50svh] h-full w-full cover rounded grayscale"
             src={src}
           />
