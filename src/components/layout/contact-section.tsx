@@ -1,5 +1,5 @@
-import Link from 'next/link';
-import { Instagram, TikTok, WhatsApp } from '../atoms/icons';
+import Link from 'next/link'
+import { Instagram, TikTok, WhatsApp } from '../atoms/icons'
 
 export const ContactSection = () => {
   return (
@@ -100,5 +100,5 @@ export const ContactSection = () => {
         </div>
       </section>
     </div>
-  );
-};
+  )
+}

@@ -1,6 +1,6 @@
-import { Button } from '@/components/ui/button';
-import { Progress } from '@/components/ui/progress';
-import { STEPS_SECTION } from '@/lib/constants';
+import { Button } from '@/components/ui/button'
+import { Progress } from '@/components/ui/progress'
+import { STEPS_SECTION } from '@/lib/constants'
 
 export const StepsSection = () => {
   return (
@@ -34,7 +34,7 @@ export const StepsSection = () => {
           <div className="absolute left-0 top-[7px] hidden h-0.5 w-full bg-foreground md:block" />
 
           <div className="grid grid-cols-1 gap-12 md:grid-cols-3 md:gap-8">
-            {STEPS_SECTION.map((step) => (
+            {STEPS_SECTION.map(step => (
               <div key={step.id} className="relative pl-8 md:pl-0">
                 {/* Connector Dot */}
                 <div className="absolute left-0 top-[3px] h-4 w-4 rounded-full border-4 border-background bg-foreground md:left-0 md:top-0" />
@@ -87,5 +87,5 @@ export const StepsSection = () => {
         </div>
       </div>
     </div>
-  );
-};
+  )
+}

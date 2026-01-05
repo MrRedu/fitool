@@ -2,13 +2,13 @@ import {
   Exercise,
   type ExerciseForm,
   exerciseFormSchema,
-} from '@/schemas/routine-creator.schema';
-import { useExerciseListStore } from '@/stores/exercises.store';
-import { zodResolver } from '@hookform/resolvers/zod';
-import { useForm } from 'react-hook-form';
+} from '@/schemas/routine-creator.schema'
+import { useExerciseListStore } from '@/stores/exercises.store'
+import { zodResolver } from '@hookform/resolvers/zod'
+import { useForm } from 'react-hook-form'
 
 export function useRoutineCreator() {
-  const addExercise = useExerciseListStore((state) => state.addExercise);
+  const addExercise = useExerciseListStore(state => state.addExercise)
 
   const form = useForm<ExerciseForm>({
     resolver: zodResolver(exerciseFormSchema),
@@ -21,7 +21,7 @@ export function useRoutineCreator() {
       weightUnit: 'kg',
       note: '',
     },
-  });
+  })
 
   const onSubmit = (data: ExerciseForm) => {
     const newExercise: Exercise = {
@@ -33,15 +33,15 @@ export function useRoutineCreator() {
       weight: Number(data.weight),
       weightUnit: data.weightUnit,
       note: data.note || '',
-    };
+    }
 
-    addExercise(newExercise);
-    form.reset();
-  };
+    addExercise(newExercise)
+    form.reset()
+  }
 
   return {
     form,
     onSubmit,
     reset: () => form.reset(),
-  };
+  }
 }

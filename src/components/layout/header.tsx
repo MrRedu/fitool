@@ -1,16 +1,16 @@
-'use client';
+'use client'
 
-import { MenuIcon } from 'lucide-react';
+import { MenuIcon } from 'lucide-react'
 
-import { cn } from '@/lib/utils';
+import { cn } from '@/lib/utils'
 
 import {
   Accordion,
   AccordionContent,
   AccordionItem,
   AccordionTrigger,
-} from '@/components/ui/accordion';
-import { Button } from '@/components/ui/button';
+} from '@/components/ui/accordion'
+import { Button } from '@/components/ui/button'
 import {
   NavigationMenu,
   NavigationMenuContent,
@@ -19,33 +19,29 @@ import {
   NavigationMenuList,
   NavigationMenuTrigger,
   navigationMenuTriggerStyle,
-} from '@/components/ui/navigation-menu';
+} from '@/components/ui/navigation-menu'
 import {
   Sheet,
   SheetContent,
   SheetHeader,
   SheetTitle,
   SheetTrigger,
-} from '@/components/ui/sheet';
-import Link from 'next/link';
+} from '@/components/ui/sheet'
+import Link from 'next/link'
+import Image from 'next/image'
 
 const TOOLS = [
   {
     title: 'Herramientas',
-    description: 'Overview of your activity',
-    href: '#',
+    description: 'Mejora tu flujo de entrenamiento.',
+    href: '/tools',
   },
   {
     title: 'Calculadoras',
-    description: 'Track your performance',
-    href: '#',
+    description: 'Calcula tus métricas de inmediato.',
+    href: '/calculators',
   },
-  // {
-  //   title: 'Settings',
-  //   description: 'Configure your preferences',
-  //   href: '#',
-  // }
-];
+]
 
 const NAVS = [
   {
@@ -53,13 +49,17 @@ const NAVS = [
     href: '/#pricing',
   },
   {
+    title: 'Equipo',
+    href: '/#team',
+  },
+  {
     title: 'Contacto',
     href: '/#contact',
   },
-];
+]
 
 interface HeaderProps {
-  className?: string;
+  className?: string
 }
 
 export const Header = ({ className }: HeaderProps) => {
@@ -71,10 +71,12 @@ export const Header = ({ className }: HeaderProps) => {
       <div className="container w-full mx-auto">
         <nav className="flex items-center justify-between">
           <Link href="/" className="flex items-center gap-2">
-            <img
+            <Image
               src="/fitool.svg"
               className="max-h-8 w-full"
               alt="FiTool logo"
+              width={320}
+              height={32}
             />
             <span className="text-lg font-semibold tracking-tighter sr-only">
               FiTool
@@ -133,10 +135,12 @@ export const Header = ({ className }: HeaderProps) => {
               <SheetHeader>
                 <SheetTitle>
                   <Link href="/" className="flex items-center gap-2">
-                    <img
+                    <Image
                       src="/fitool.svg"
                       className="max-h-8 w-full"
                       alt="FiTool logo"
+                      width={320}
+                      height={32}
                     />
                     <span className="text-lg font-semibold tracking-tighter sr-only">
                       FiTool
@@ -153,7 +157,7 @@ export const Header = ({ className }: HeaderProps) => {
                     <AccordionContent>
                       <div className="grid md:grid-cols-2">
                         {TOOLS.map(({ href, title, description }, index) => (
-                          <a
+                          <Link
                             href={href}
                             key={index}
                             className="rounded-md p-3 transition-colors hover:bg-muted/70"
@@ -166,22 +170,22 @@ export const Header = ({ className }: HeaderProps) => {
                                 {description}
                               </p>
                             </div>
-                          </a>
+                          </Link>
                         ))}
                       </div>
                     </AccordionContent>
                   </AccordionItem>
                 </Accordion>
                 <div className="flex flex-col gap-6">
-                  <a href="#" className="font-medium">
-                    Templates
-                  </a>
-                  <a href="#" className="font-medium">
-                    Blog
-                  </a>
-                  <a href="#" className="font-medium">
-                    Pricing
-                  </a>
+                  {NAVS.map(({ href, title }, index) => (
+                    <Link
+                      href={href}
+                      key={index}
+                      className="font-medium text-base"
+                    >
+                      {title}
+                    </Link>
+                  ))}
                 </div>
                 {/* <div className="mt-6 flex flex-col gap-4">
                   <Button variant="outline">Sign in</Button>
@@ -193,5 +197,5 @@ export const Header = ({ className }: HeaderProps) => {
         </nav>
       </div>
     </section>
-  );
-};
+  )
+}

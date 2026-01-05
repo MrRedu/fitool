@@ -1,5 +1,5 @@
-'use client';
-import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
+'use client'
+import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card'
 import {
   Table,
   TableBody,
@@ -7,14 +7,14 @@ import {
   TableHead,
   TableHeader,
   TableRow,
-} from '@/components/ui/table';
-import { HarrisBenedictFormCalculator } from '../forms/harris-benedict/harris-benedict-form-calculator';
-import { useHarrisBenedictCalculator } from '@/hooks/harris-benedict-calculator/use-harris-benedict-calculator';
-import { LEVELS_OPTIONS, TITLE_OPTIONS } from '@/lib/constants';
+} from '@/components/ui/table'
+import { HarrisBenedictFormCalculator } from '../forms/harris-benedict/harris-benedict-form-calculator'
+import { useHarrisBenedictCalculator } from '@/hooks/harris-benedict-calculator/use-harris-benedict-calculator'
+import { LEVELS_OPTIONS, TITLE_OPTIONS } from '@/lib/constants'
 
 export const HarrisBenedictCalculator = () => {
   const { objectives, onSubmit, harrisBenedictCalculatorForm } =
-    useHarrisBenedictCalculator();
+    useHarrisBenedictCalculator()
 
   return (
     <div className="flex flex-col gap-8">
@@ -108,5 +108,5 @@ export const HarrisBenedictCalculator = () => {
         </Table>
       )} */}
     </div>
-  );
-};
+  )
+}

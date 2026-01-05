@@ -1,10 +1,10 @@
-import type { ReactNode } from 'react';
-import { motion } from 'motion/react';
+import type { ReactNode } from 'react'
+import { motion } from 'motion/react'
 
 interface MarqueeRowProps {
-  direction?: 'left' | 'right';
-  speed?: number;
-  children: ReactNode;
+  direction?: 'left' | 'right'
+  speed?: number
+  children: ReactNode
 }
 
 export const MarqueeRow = ({
@@ -12,7 +12,7 @@ export const MarqueeRow = ({
   speed = 40,
   children,
 }: MarqueeRowProps) => {
-  const xTranslation = direction === 'left' ? ['0%', '-50%'] : ['-50%', '0%'];
+  const xTranslation = direction === 'left' ? ['0%', '-50%'] : ['-50%', '0%']
 
   return (
     <div className="flex overflow-hidden">
@@ -23,11 +23,11 @@ export const MarqueeRow = ({
           repeat: Number.POSITIVE_INFINITY,
           ease: 'linear',
         }}
-        className="flex gap-4 pr-4 min-w-max"
+        className="flex gap-2 sm:gap-4 pr-4 min-w-max"
       >
         {children}
         {children}
       </motion.div>
     </div>
-  );
-};
+  )
+}

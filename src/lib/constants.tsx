@@ -1,11 +1,11 @@
-import { Check, X } from 'lucide-react';
+import { Check, X } from 'lucide-react'
 
 // HarrisBenedict calculator
 
 export const GENDERS_OPTIONS = [
   { value: 'male', label: 'Hombre' },
   { value: 'female', label: 'Mujer' },
-];
+]
 
 export const ACTIVITY_LEVELS = [
   {
@@ -30,26 +30,26 @@ export const ACTIVITY_LEVELS = [
     value: 'extra-active',
     label: 'Actividad extra activa: ejercicio muy intenso o deporte a diario',
   },
-];
+]
 
 export const OBJECTIVE_OPTIONS = [
   { value: 'lose-weight', label: 'Perder peso' },
   { value: 'maintain-weight', label: 'Mantener peso' },
   { value: 'gain-weight', label: 'Ganar peso' },
-];
+]
 
 export const TITLE_OPTIONS = {
   'calorie-deficit': 'Las calorías para estar en déficit calórico',
   maintenance: 'Las calorías para mantenimiento',
   'caloric-surplus': 'Las calorías para estar en superávit calórico',
-};
+}
 
 export const LEVELS_OPTIONS = {
   light: 'Ligero',
   moderate: 'Moderado',
   aggressive: 'Agresivo',
   maintenance: 'Mantenimiento',
-};
+}
 
 // RoutineCreator
 
@@ -57,18 +57,18 @@ export const EXERCISE_DURATIONS_OPTIONS = [
   { label: 'Repeticiones', value: 'reps' },
   { label: 'Segundos', value: 'seconds' },
   { label: 'Minutos', value: 'minutes' },
-];
+]
 
 export const UNIT_WEIGHT_OPTIONS = [
   { label: 'kg', value: 'kg' },
   { label: 'lb', value: 'lb' },
-];
+]
 
 export const DURATION_TYPES_MAPPING = {
   reps: 'reps',
   seconds: 's',
   minutes: 'min',
-} as const;
+} as const
 
 // TODO: Something
 
@@ -76,15 +76,17 @@ export const CALCULATORS = [
   {
     name: 'Calculadora de Calorías (Harris-Benedict)',
     href: '/calculators/harris-benedict',
+    imgSrc: '/calculators/cover-harris-benedict.webp',
   },
-];
+]
 
 export const TOOLS = [
   {
     name: 'Creador de rutina',
     href: '/tools/routine-creator',
+    imgSrc: '/tools/cover-routine-creator.webp',
   },
-];
+]
 
 // Landing sections
 
@@ -113,7 +115,7 @@ export const IMAGES_HERO_SECTION = [
     src: '/hero/6.webp',
     alt: 'img',
   },
-];
+]
 
 export const STEPS_SECTION = [
   {
@@ -146,7 +148,7 @@ export const STEPS_SECTION = [
     progress: 100,
     duration: 'Meta cumplida',
   },
-];
+]
 
 export const PLANS_PRICING_SECTION = [
   {
@@ -173,7 +175,7 @@ export const PLANS_PRICING_SECTION = [
     href: '#',
     recommended: false,
   },
-];
+]
 
 export const FEATURE_MATRIX_PRICING_SECTION = [
   {
@@ -270,7 +272,7 @@ export const FEATURE_MATRIX_PRICING_SECTION = [
       },
     ],
   },
-];
+]
 
 export const MEMBERS_TEAM_SECTION = [
   {
@@ -303,4 +305,4 @@ export const MEMBERS_TEAM_SECTION = [
     role: 'Fisioterapeuta',
     image: '/hero/1.webp',
   },
-];
+]
