@@ -76,6 +76,7 @@ export const CALCULATORS = [
   {
     name: 'Calculadora de Calorías (Harris-Benedict)',
     href: '/calculators/harris-benedict',
+    imgSrc: '/calculators/cover-harris-benedict.webp',
   },
 ];
 
@@ -83,6 +84,7 @@ export const TOOLS = [
   {
     name: 'Creador de rutina',
     href: '/tools/routine-creator',
+    imgSrc: '/tools/cover-routine-creator.webp',
   },
 ];
 

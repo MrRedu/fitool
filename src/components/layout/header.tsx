@@ -28,6 +28,7 @@ import {
   SheetTrigger,
 } from '@/components/ui/sheet';
 import Link from 'next/link';
+import Image from 'next/image';
 
 const TOOLS = [
   {
@@ -133,10 +134,12 @@ export const Header = ({ className }: HeaderProps) => {
               <SheetHeader>
                 <SheetTitle>
                   <Link href="/" className="flex items-center gap-2">
-                    <img
+                    <Image
                       src="/fitool.svg"
                       className="max-h-8 w-full"
                       alt="FiTool logo"
+                      width={320}
+                      height={32}
                     />
                     <span className="text-lg font-semibold tracking-tighter sr-only">
                       FiTool
@@ -153,7 +156,7 @@ export const Header = ({ className }: HeaderProps) => {
                     <AccordionContent>
                       <div className="grid md:grid-cols-2">
                         {TOOLS.map(({ href, title, description }, index) => (
-                          <a
+                          <Link
                             href={href}
                             key={index}
                             className="rounded-md p-3 transition-colors hover:bg-muted/70"
@@ -166,22 +169,22 @@ export const Header = ({ className }: HeaderProps) => {
                                 {description}
                               </p>
                             </div>
-                          </a>
+                          </Link>
                         ))}
                       </div>
                     </AccordionContent>
                   </AccordionItem>
                 </Accordion>
                 <div className="flex flex-col gap-6">
-                  <a href="#" className="font-medium">
-                    Templates
-                  </a>
-                  <a href="#" className="font-medium">
-                    Blog
-                  </a>
-                  <a href="#" className="font-medium">
-                    Pricing
-                  </a>
+                  {NAVS.map(({ href, title }, index) => (
+                    <Link
+                      href={href}
+                      key={index}
+                      className="font-medium text-base"
+                    >
+                      {title}
+                    </Link>
+                  ))}
                 </div>
                 {/* <div className="mt-6 flex flex-col gap-4">
                   <Button variant="outline">Sign in</Button>

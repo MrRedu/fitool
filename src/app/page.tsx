@@ -1,5 +1,4 @@
 import Link from 'next/link';
-import { Skeleton } from '@/components/ui/skeleton';
 import { Typography } from '@/components/ui/typography';
 import { CALCULATORS, TOOLS } from '@/lib/constants';
 import {
@@ -11,11 +10,15 @@ import {
   ContactSection,
 } from '@/components/layout';
 import { Header } from '@/components/layout/header';
+import Image from 'next/image';
+import { Suspense } from 'react';
 
 export default function HomePage() {
   return (
     <>
-      <HeroSection />
+      <Suspense>
+        <HeroSection />
+      </Suspense>
       <Header />
       <section className="container mx-auto px-4 md:px-6 lg:px-8 py-32 space-y-10 w-full">
         <div className="space-y-4">
@@ -23,11 +26,17 @@ export default function HomePage() {
             Herramientas
           </Typography>
           <ul className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
-            {TOOLS.map((tool) => (
-              <li key={tool.href}>
-                <Link href={tool.href}>
-                  <Skeleton className="h-50" />
-                  <Typography variant="large">{tool.name}</Typography>
+            {TOOLS.map(({ href, name, imgSrc }) => (
+              <li key={href}>
+                <Link href={href} className="space-y-2">
+                  <Image
+                    width={300}
+                    height={300}
+                    src={imgSrc}
+                    alt={name}
+                    className="rounded-md border h-40 w-full object-cover"
+                  />
+                  <Typography variant="muted">{name}</Typography>
                 </Link>
               </li>
             ))}
@@ -38,15 +47,17 @@ export default function HomePage() {
             Calculadoras
           </Typography>
           <ul className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
-            {CALCULATORS.map((calculator) => (
-              <li key={calculator.href}>
-                <Link href={calculator.href} className="space-y-2">
-                  <img
-                    src="/calculators/calculator-harris-benedict.png"
-                    alt={calculator.name}
-                    className="rounded-md"
+            {CALCULATORS.map(({ href, name, imgSrc }) => (
+              <li key={href}>
+                <Link href={href} className="space-y-2">
+                  <Image
+                    width={300}
+                    height={300}
+                    src={imgSrc}
+                    alt={name}
+                    className="rounded-md border h-40 w-full object-cover"
                   />
-                  <Typography variant="muted">{calculator.name}</Typography>
+                  <Typography variant="muted">{name}</Typography>
                 </Link>
               </li>
             ))}

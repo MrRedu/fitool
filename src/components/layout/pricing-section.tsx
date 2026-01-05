@@ -1,6 +1,6 @@
 'use client';
 
-import {  ChevronDown, Info } from 'lucide-react';
+import { ChevronDown, Info } from 'lucide-react';
 import { Fragment, useState } from 'react';
 
 import { cn } from '@/lib/utils';
