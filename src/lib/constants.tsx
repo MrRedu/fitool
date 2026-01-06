@@ -183,7 +183,7 @@ export const FEATURE_MATRIX_PRICING_SECTION = [
     features: [
       {
         title: 'Comodidades básicas',
-        info: 'Café gratis, Lockers, Seguridad y Wifi en todas las áreas.',
+        info: 'Café gratis, lockers, seguridad y wi-fi en todas las áreas',
         inclusions: [
           { plan: 'Restringido', content: <Check className="size-5" /> },
           { plan: 'Héroe', content: <Check className="size-5" /> },
@@ -193,7 +193,7 @@ export const FEATURE_MATRIX_PRICING_SECTION = [
       },
       {
         title: 'Instalaciones',
-        info: 'Acceso a duchas, vestidores y estacionamiento privado.',
+        info: 'Acceso a duchas, vestidores y estacionamiento privado',
         inclusions: [
           { plan: 'Restringido', content: <Check className="size-5" /> },
           { plan: 'Héroe', content: <Check className="size-5" /> },
@@ -232,7 +232,7 @@ export const FEATURE_MATRIX_PRICING_SECTION = [
       },
       {
         title: 'Ciclismo (Bike/Spinning)',
-        info: 'Xtreme Bike y Spinning convencional.',
+        info: 'Xtreme Bike y Spinning convencional',
         inclusions: [
           {
             plan: 'Restringido',
