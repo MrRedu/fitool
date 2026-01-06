@@ -3,8 +3,6 @@
 import { ChevronDown, Info } from 'lucide-react'
 import { Fragment, useState } from 'react'
 
-import { cn } from '@/lib/utils'
-
 import {
   Collapsible,
   CollapsibleContent,
@@ -22,6 +20,31 @@ import {
   PLANS_PRICING_SECTION,
 } from '@/lib/constants'
 import { SectionContainer } from './section-container'
+
+const ClickableTooltip = ({
+  children,
+  content,
+}: {
+  children: React.ReactNode
+  content: string
+}) => {
+  const [open, setOpen] = useState(false)
+
+  return (
+    <Tooltip open={open} onOpenChange={setOpen} delayDuration={0}>
+      {children}
+      <TooltipContent
+        onPointerDownOutside={() => setOpen(false)}
+        onClick={e => {
+          e.stopPropagation()
+          setOpen(false)
+        }}
+      >
+        {content}
+      </TooltipContent>
+    </Tooltip>
+  )
+}
 
 export const PricingSection = () => {
   const [billing, setBilling] = useState<'monthly' | 'annually'>('monthly')
@@ -95,19 +118,20 @@ export const PricingSection = () => {
                   <Fragment key={feature.title}>
                     <dl className="hidden grid-cols-6 gap-6 border-b border-border lg:grid">
                       <dt className="col-span-2 justify-between py-4 pb-4">
-                        <Tooltip>
-                          <h4 className="group flex min-h-6 items-center gap-x-1 font-medium">
-                            {feature.title}{' '}
-                            {feature.info && (
-                              <TooltipTrigger asChild>
+                        {feature.info ? (
+                          <ClickableTooltip content={feature.info}>
+                            <TooltipTrigger asChild>
+                              <h4 className="group flex min-h-6 items-center gap-x-1 font-medium">
+                                {feature.title}{' '}
                                 <Info className="ml-2 size-4 cursor-pointer text-muted-foreground group-hover:text-accent-foreground" />
-                              </TooltipTrigger>
-                            )}
+                              </h4>
+                            </TooltipTrigger>
+                          </ClickableTooltip>
+                        ) : (
+                          <h4 className="group flex min-h-6 items-center gap-x-1 font-medium">
+                            {feature.title}
                           </h4>
-                          {feature.info && (
-                            <TooltipContent>{feature.info}</TooltipContent>
-                          )}
-                        </Tooltip>
+                        )}
                       </dt>
                       {feature.inclusions.map(inclusion => (
                         <dd
@@ -128,19 +152,20 @@ export const PricingSection = () => {
                       >
                         <CollapsibleTrigger className="w-full">
                           <dt className="flex items-center justify-between pb-4">
-                            <Tooltip>
-                              <TooltipTrigger asChild>
-                                <h4 className="group flex items-center gap-x-1 text-sm font-medium md:text-base">
-                                  {feature.title}
-                                  {feature.info && (
+                            {feature.info ? (
+                              <ClickableTooltip content={feature.info}>
+                                <TooltipTrigger asChild>
+                                  <h4 className="group flex items-center gap-x-1 text-sm font-medium md:text-base">
+                                    {feature.title}
                                     <Info className="ml-2 size-4 cursor-pointer text-muted-foreground group-hover:text-accent-foreground" />
-                                  )}
-                                </h4>
-                              </TooltipTrigger>
-                              {feature.info && (
-                                <TooltipContent>{feature.info}</TooltipContent>
-                              )}
-                            </Tooltip>
+                                  </h4>
+                                </TooltipTrigger>
+                              </ClickableTooltip>
+                            ) : (
+                              <h4 className="group flex items-center gap-x-1 text-sm font-medium md:text-base">
+                                {feature.title}
+                              </h4>
+                            )}
 
                             <ChevronDown className='size-5 transition-transform group-data-[state="open"]:rotate-180' />
                           </dt>
