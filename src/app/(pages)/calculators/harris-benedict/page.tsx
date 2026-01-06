@@ -1,5 +1,7 @@
+import { CatalogGrid } from '@/components/molecules/catalog-grid'
 import { HarrisBenedictCalculator } from '@/components/organisms/calculators/harris-benedict-calculator'
 import { Typography } from '@/components/ui/typography'
+import { CALCULATORS } from '@/lib/constants'
 import { Calculator } from 'lucide-react'
 
 export default function CalculatorHarrisBenedictPage() {
@@ -128,6 +130,14 @@ export default function CalculatorHarrisBenedictPage() {
           </Typography>
         </section>
       </div>
+
+      {/* TODO: Cambiar el <article/> por el <SectionComponent/> */}
+      <footer className="max-w-6xl m-auto lg:p-16 p-8 space-y-16">
+        <CatalogGrid
+          title="Otras calculadoras relacionadas"
+          items={CALCULATORS}
+        />
+      </footer>
     </article>
   )
 }
