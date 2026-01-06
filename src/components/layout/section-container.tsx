@@ -2,7 +2,7 @@ import { cn } from '@/lib/utils'
 
 interface SectionContainerProps {
   verticalPadding?: string
-  as?: 'div' | 'section'
+  as?: 'div' | 'section' | 'article'
   className?: string
   id?: string
   children?: React.ReactNode
