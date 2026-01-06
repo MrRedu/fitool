@@ -22,6 +22,7 @@ import {
   PLANS_PRICING_SECTION,
 } from '@/lib/constants'
 import { SectionContainer } from './section-container'
+import { Typography } from '../ui/typography'
 
 export const PricingSection = () => {
   const [billing, setBilling] = useState<'monthly' | 'annually'>('monthly')
@@ -130,15 +131,24 @@ export const PricingSection = () => {
                           <dt className="flex items-center justify-between pb-4">
                             <Tooltip>
                               <TooltipTrigger asChild>
-                                <h4 className="group flex items-center gap-x-1 text-sm font-medium md:text-base">
+                                <h4 className="group flex text-start items-center gap-x-1 text-sm font-medium md:text-base">
                                   {feature.title}
                                   {feature.info && (
-                                    <Info className="ml-2 size-4 cursor-pointer text-muted-foreground group-hover:text-accent-foreground" />
+                                    <Info className="ml-2 size-4 cursor-pointer text-muted-foreground group-hover:text-accent-foreground hidden md:block" />
                                   )}
                                 </h4>
                               </TooltipTrigger>
+
                               {feature.info && (
                                 <TooltipContent>{feature.info}</TooltipContent>
+                              )}
+                              {feature.info && (
+                                <Typography
+                                  variant="small"
+                                  className="text-muted-foreground text-xs md:hidden text-end ml-auto mr-2"
+                                >
+                                  {`(${feature.info})`}
+                                </Typography>
                               )}
                             </Tooltip>
 
