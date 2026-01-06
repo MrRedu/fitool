@@ -6,6 +6,7 @@ import {
   TeamSection,
   StepsSection,
   ContactSection,
+  SectionContainer,
 } from '@/components/layout'
 import { Header } from '@/components/layout/header'
 import { CatalogGrid } from '@/components/molecules/catalog-grid'
@@ -18,10 +19,10 @@ export default function HomePage() {
         <HeroSection />
       </Suspense>
       <Header />
-      <section className="container mx-auto px-4 md:px-6 lg:px-8 py-32 space-y-10 w-full">
+      <SectionContainer as="section" className="space-y-10">
         <CatalogGrid title="Herramientas" items={TOOLS} />
         <CatalogGrid title="Calculadoras" items={CALCULATORS} />
-      </section>
+      </SectionContainer>
       <StepsSection />
       <PricingSection />
       <TeamSection />

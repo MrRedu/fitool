@@ -1,9 +1,9 @@
 import { Clock, Heart, Home, Wallet } from 'lucide-react'
+import { SectionContainer } from './section-container'
 
 export const FAQSection = () => {
   return (
-    <section className="w-full px-4 md:px-6 lg:px-8 py-32">
-      <div className="container w-full mx-auto">
+      <SectionContainer as="section" id="faq">
         <div className="mx-auto max-w-3xl">
           <h2 className="text-center text-3xl font-semibold md:text-5xl lg:mx-14 text-balance">
             ¿Por qué elegir nuestro gimnasio para transformar tu vida?
@@ -51,7 +51,6 @@ export const FAQSection = () => {
             </li>
           </ul>
         </div>
-      </div>
-    </section>
+      </SectionContainer>
   )
 }

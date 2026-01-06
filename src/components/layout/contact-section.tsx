@@ -1,11 +1,12 @@
 import Link from 'next/link'
 import { Instagram, TikTok, WhatsApp } from '../atoms/icons'
+import { SectionContainer } from './section-container'
 
 export const ContactSection = () => {
   return (
     <div className="flex w-full justify-center" id="contact">
       <section className="relative rounded-t-2xl rounded-b-[36px] bg-linear-to-b from-red-50 via-background to-background py-32 lg:mx-4 dark:from-red-950 w-full">
-        <div className="container w-full mx-auto px-4 md:px-6 lg:px-8">
+        <SectionContainer className='py-0'>
           <h2 className="text-center text-4xl font-semibold tracking-tight lg:text-5xl">
             ¡Contáctanos!
           </h2>
@@ -97,7 +98,7 @@ export const ContactSection = () => {
               className={'absolute inset-0 opacity-50'}
             /> */}
           </div>
-        </div>
+        </SectionContainer>
       </section>
     </div>
   )

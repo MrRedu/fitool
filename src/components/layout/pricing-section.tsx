@@ -21,20 +21,15 @@ import {
   FEATURE_MATRIX_PRICING_SECTION,
   PLANS_PRICING_SECTION,
 } from '@/lib/constants'
+import { SectionContainer } from './section-container'
 
-interface PricingProps {
-  className?: string
-}
 
-export const PricingSection = ({ className }: PricingProps) => {
+
+export const PricingSection = () => {
   const [billing, setBilling] = useState<'monthly' | 'annually'>('monthly')
 
   return (
-    <section
-      className={cn('py-32 w-full md:px-6 lg:px-8', className)}
-      id="pricing"
-    >
-      <div className="container mb-8 lg:mb-0 mx-auto w-full px-4 md:px-6 lg:px-8">
+      <SectionContainer as="section" id="pricing">
         <div className="grid grid-cols-2 gap-y-12 md:gap-y-16">
           <div className="col-span-2 flex flex-col lg:col-span-1">
             <h2 className="my-6 text-3xl font-semibold text-pretty md:text-4xl xl:text-5xl">
@@ -179,7 +174,7 @@ export const PricingSection = ({ className }: PricingProps) => {
         <p className="mt-4 hidden text-xs text-muted-foreground md:block">
           * Sujeto a cambios y condiciones
         </p>
-      </div>
-    </section>
+      </SectionContainer>
+ 
   )
 }

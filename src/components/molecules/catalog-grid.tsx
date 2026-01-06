@@ -1,4 +1,3 @@
-import { cn } from '@/lib/utils'
 import { Typography } from '../ui/typography'
 import Link from 'next/link'
 import Image from 'next/image'
