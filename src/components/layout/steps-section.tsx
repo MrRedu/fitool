@@ -5,7 +5,7 @@ import { SectionContainer } from './section-container'
 
 export const StepsSection = () => {
   return (
-    <SectionContainer as="section" >
+    <SectionContainer as="section">
       <div className="mb-12 space-y-4 text-left">
         <h1 className="text-4xl font-bold tracking-tight text-foreground md:text-5xl">
           Tu camino al cambio físico

@@ -6,9 +6,9 @@ export const ContactSection = () => {
   return (
     <div className="flex w-full justify-center" id="contact">
       <section className="relative rounded-t-2xl rounded-b-[36px] bg-linear-to-b from-red-50 via-background to-background py-32 lg:mx-4 dark:from-red-950 w-full">
-        <SectionContainer className='py-0'>
+        <SectionContainer verticalPadding="py-0">
           <h2 className="text-center text-4xl font-semibold tracking-tight lg:text-5xl">
-            ¡Contáctanos!
+            {`¡Contáctanos!`}
           </h2>
           <p className="mt-4 text-center leading-snug font-medium text-muted-foreground lg:mx-auto">
             Hopefully this form gets through our spam filters.
