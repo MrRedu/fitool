@@ -3,7 +3,7 @@ import { Typography } from '../ui/typography'
 import Link from 'next/link'
 import Image from 'next/image'
 
-interface GridProps {
+interface CatalogGridProps {
   title: string
   items: {
     href: string
@@ -12,7 +12,7 @@ interface GridProps {
   }[]
 }
 
-export const Grid = ({ title, items }: GridProps) => {
+export const CatalogGrid = ({ title, items }: CatalogGridProps) => {
   return (
     <div className="space-y-4">
       <Typography variant="h2" className="border-none">
