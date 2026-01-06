@@ -1,14 +1,23 @@
 import { HarrisBenedictCalculator } from '@/components/organisms/calculators/harris-benedict-calculator'
 import { Typography } from '@/components/ui/typography'
+import { Calculator } from 'lucide-react'
 
 export default function CalculatorHarrisBenedictPage() {
   return (
     <article className="">
-      <header className="bg-[#297AFF] pt-40 pb-20">
-        <Typography variant="h1">
-          Calculadora de Calorías (Harris-Benedict)
+      <header className="bg-[url('/cover-page.webp')] bg-cover bg-center bg-no-repeat text-white pt-40 pb-20">
+        <div className="flex items-center justify-center gap-3">
+          <Calculator className="h-8 w-8" />
+          <Typography variant="h1">
+            Calculadora de Calorías (Harris-Benedict)
+          </Typography>
+        </div>
+        <Typography className="text-center mt-2!">
+          Calcula tus calorías diarias necesarias para mantener, aumentar o
+          disminuir tu peso.
         </Typography>
       </header>
+
       <div className="max-w-4xl m-auto lg:p-16 p-8 space-y-16">
         <section className="text-center space-y-4">
           <Typography variant="large">
