@@ -1,5 +1,11 @@
 import { CatalogGrid } from '@/components/molecules/catalog-grid'
 import { TOOLS } from '@/lib/constants'
+import { type Metadata } from 'next'
+
+export const metadata: Metadata = {
+  title: 'Herramientas',
+  description: 'Herramientas de entrenamiento y nutrición.',
+}
 
 export default function ToolsPage() {
   return (

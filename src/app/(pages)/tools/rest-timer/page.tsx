@@ -6,7 +6,7 @@ import { TOOLS } from '@/lib/constants'
 import { CatalogGrid } from '@/components/molecules/catalog-grid'
 
 export const metadata: Metadata = {
-  title: 'FiTool - Cronómetro de Descanso',
+  title: 'Cronómetro de descanso',
   description:
     'Temporizador de descanso personalizable con alerta sonora al finalizar.',
 }
@@ -16,7 +16,7 @@ export default function RestTimerPage() {
     <article className="">
       <header className="bg-[url('/cover-page.webp')] bg-cover bg-center bg-no-repeat text-white pt-40 pb-20">
         <div className="flex items-center justify-center gap-3">
-          <Clock className="h-8 w-8" />
+          <Clock className="h-8 w-8 hidden md:block" />
           <Typography variant="h1">Cronómetro de Descanso</Typography>
         </div>
         <Typography className="text-center mt-2!">

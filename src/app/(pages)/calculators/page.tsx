@@ -1,5 +1,11 @@
 import { CatalogGrid } from '@/components/molecules/catalog-grid'
 import { CALCULATORS } from '@/lib/constants'
+import { type Metadata } from 'next'
+
+export const metadata: Metadata = {
+  title: 'Calculadoras',
+  description: 'Calculadoras de entrenamiento y nutrición.',
+}
 
 export default function CalculatorsPage() {
   return (
