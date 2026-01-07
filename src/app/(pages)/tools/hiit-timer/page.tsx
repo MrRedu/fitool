@@ -16,7 +16,7 @@ export default function HIITTimerPage() {
     <article className="">
       <header className="bg-[url('/cover-page.webp')] bg-cover bg-center bg-no-repeat text-white pt-40 pb-20">
         <div className="flex items-center justify-center gap-3">
-          <Timer className="h-8 w-8" />
+          <Timer className="h-8 w-8 hidden md:block" />
           <Typography variant="h1">Cronómetro HIIT / Tabata</Typography>
         </div>
         <Typography className="text-center mt-2!">
