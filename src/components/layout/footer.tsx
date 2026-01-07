@@ -4,10 +4,6 @@ import { Input } from '@/components/ui/input'
 import { Button } from '@/components/ui/button'
 
 const SOCIAL_LINKS = [
-  // {
-  //   name: 'LinkedIn',
-  //   href: '#',
-  // },
   {
     name: 'Instagram',
     href: '#',
@@ -16,14 +12,10 @@ const SOCIAL_LINKS = [
     name: 'TikTok',
     href: '#',
   },
-  // {
-  //   name: 'Facebook',
-  //   href: '#',
-  // },
-  // {
-  //   name: 'Twitter',
-  //   href: '#',
-  // },
+  {
+    name: 'WhatsApp',
+    href: '#',
+  },
 ]
 
 const LINKS = [
@@ -33,11 +25,11 @@ const LINKS = [
   },
   {
     name: 'Herramientas',
-    href: '#',
+    href: '/tools',
   },
   {
     name: 'Calculadoras',
-    href: '#',
+    href: '/calculators',
   },
   {
     name: 'Membresías',

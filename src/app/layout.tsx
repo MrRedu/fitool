@@ -48,14 +48,8 @@ export const metadata: Metadata = {
     images: [
       {
         url: '/cover-page.webp',
-        width: 800,
-        height: 600,
-        alt: 'FiTool | Gimnasio de alto rendimiento',
-      },
-      {
-        url: '/cover-page.webp',
-        width: 1800,
-        height: 1600,
+        width: 1200,
+        height: 630,
         alt: 'FiTool | Gimnasio de alto rendimiento',
       },
     ],

@@ -32,7 +32,7 @@ export const HarrisBenedictFormCalculator = ({
     <Form {...form}>
       <form
         onSubmit={form.handleSubmit(onSubmit)}
-        className="space-y-6 grid items-start grid-cols-2 gap-x-4"
+        className="grid items-start grid-cols-2 gap-x-4 space-y-6"
       >
         <FormField
           control={form.control}

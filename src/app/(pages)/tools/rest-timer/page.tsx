@@ -1,38 +1,38 @@
 import { type Metadata } from 'next'
-import { ExerciseList } from '@/components/organisms/exercise-list'
-import { RoutineCreatorForm } from '@/components/organisms/forms/routine-creator/routine-creator-form'
+import { RestTimer } from '@/components/organisms/rest-timer/rest-timer'
 import { Typography } from '@/components/ui/typography'
-import { Dumbbell } from 'lucide-react'
-import { CatalogGrid } from '@/components/molecules/catalog-grid'
+import { Clock } from 'lucide-react'
 import { TOOLS } from '@/lib/constants'
+import { CatalogGrid } from '@/components/molecules/catalog-grid'
 
 export const metadata: Metadata = {
-  title: 'FiTool - Creador de rutinas',
+  title: 'FiTool - Cronómetro de Descanso',
   description:
-    'Herramienta para crear rutinas de entrenamiento personalizadas de manera sencilla.',
+    'Temporizador de descanso personalizable con alerta sonora al finalizar.',
 }
 
-export default function RoutineCreatorPage() {
+export default function RestTimerPage() {
   return (
     <article className="">
       <header className="bg-[url('/cover-page.webp')] bg-cover bg-center bg-no-repeat text-white pt-40 pb-20">
         <div className="flex items-center justify-center gap-3">
-          <Dumbbell className="h-8 w-8" />
-          <Typography variant="h1">Creador de rutinas</Typography>
+          <Clock className="h-8 w-8" />
+          <Typography variant="h1">Cronómetro de Descanso</Typography>
         </div>
         <Typography className="text-center mt-2!">
-          Crea tu rutina perfecta y compártela fácilmente
+          Temporizador simple para tus tiempos de descanso entre ejercicios
         </Typography>
       </header>
 
       <div className="max-w-4xl m-auto lg:p-16 p-8 space-y-16">
         <section className="text-center space-y-4">
-          <Typography variant="large">
-            Crea tu programa de entrenamiento y compártelo con un solo clic.
+          <Typography variant="large" className="text-balance">
+            Selecciona el tiempo de <strong>descanso que necesites</strong> y el
+            cronómetro te avisará cuando termine con una{' '}
+            <strong>alerta sonora</strong>.
           </Typography>
         </section>
-        <RoutineCreatorForm />
-        <ExerciseList />
+        <RestTimer />
       </div>
 
       {/* TODO: Cambiar el <article/> por el <SectionComponent/> */}

@@ -25,6 +25,7 @@ interface CalculateCaloriesByObjective {
   }
 }
 
+// TODO: Mover esto a un archivo solo de esta calculadora
 export const calculateCaloriesByObjective = (
   values: FormCalculatorValues
 ): CalculateCaloriesByObjective => {

@@ -70,13 +70,16 @@ export const DURATION_TYPES_MAPPING = {
   minutes: 'min',
 } as const
 
-// TODO: Something
-
 export const CALCULATORS = [
   {
     name: 'Calculadora de Calorías (Harris-Benedict)',
     href: '/calculators/harris-benedict',
     imgSrc: '/calculators/cover-harris-benedict.webp',
+  },
+  {
+    name: 'Calculadora de 1RM Sentadilla',
+    href: '/calculators/1rm-squad',
+    imgSrc: '/calculators/cover-1rm-squat.webp',
   },
 ]
 
@@ -85,6 +88,16 @@ export const TOOLS = [
     name: 'Creador de rutina',
     href: '/tools/routine-creator',
     imgSrc: '/tools/cover-routine-creator.webp',
+  },
+  {
+    name: 'Cronómetro de HIIT',
+    href: '/tools/hiit-timer',
+    imgSrc: '/tools/cover-hiit-timer.webp',
+  },
+  {
+    name: 'Cronómetro de descanso',
+    href: '/tools/rest-timer',
+    imgSrc: '/tools/cover-rest-timer.webp',
   },
 ]
 
