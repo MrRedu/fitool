@@ -4,8 +4,20 @@ import { Card, CardContent } from '@/components/ui/card'
 import { Button } from '@/components/ui/button'
 import { Typography } from '@/components/ui/typography'
 import { useRestTimer } from '@/hooks/rest-timer/use-rest-timer'
-import { Play, Pause, RotateCcw, Volume2 } from 'lucide-react'
+import { Play, Pause, RotateCcw, Volume2, CircleAlert } from 'lucide-react'
+import {
+  Select,
+  SelectTrigger,
+  SelectContent,
+  SelectItem,
+  SelectValue,
+  SelectGroup,
+  SelectLabel,
+} from '@/components/ui/select'
 import { formatTime } from '@/lib/utils-hiit'
+import { Alert, AlertDescription, AlertTitle } from '@/components/ui/alert'
+import { Switch } from '@/components/ui/switch'
+import { cn } from '@/lib/utils'
 
 export const RestTimer = () => {
   const {
@@ -45,9 +57,12 @@ export const RestTimer = () => {
   }
 
   const formatDurationLabel = (seconds: number): string => {
-    if (seconds === 60) return '60s'
-    if (seconds === 90) return '90s'
-    if (seconds === 180) return '3min'
+    if (seconds < 60) return `${seconds}s`
+    const mins = Math.floor(seconds / 60)
+    const rem = seconds % 60
+    if (rem === 0) return `${mins}min`
+    if (rem === 30) return `${mins}min 30s`
+    if (mins >= 1) return `${mins}min ${rem}s`
     return `${seconds}s`
   }
 
@@ -60,7 +75,9 @@ export const RestTimer = () => {
             <div className="text-center space-y-4">
               <Typography
                 variant="h2"
-                className={`${getPhaseColor()} transition-colors`}
+                className={cn(`transition-colors`, {
+                  [getPhaseColor()]: true,
+                })}
               >
                 {getPhaseLabel()}
               </Typography>
@@ -105,7 +122,12 @@ export const RestTimer = () => {
       )}
 
       {/* Settings */}
-      <div className="space-y-4">
+      <div
+        className={cn(
+          'space-y-4',
+          state.currentPhase === 'running' && 'opacity-50 pointer-events-none'
+        )}
+      >
         {/* Duration Presets */}
         <Card>
           <CardContent className="py-6">
@@ -113,7 +135,7 @@ export const RestTimer = () => {
               <Typography variant="large" className="font-semibold text-center">
                 Selecciona el tiempo de descanso
               </Typography>
-              <div className="grid grid-cols-3 gap-4">
+              <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4">
                 {presetDurations.map(duration => (
                   <Button
                     key={duration}
@@ -124,42 +146,50 @@ export const RestTimer = () => {
                     }
                     onClick={() => selectDuration(duration)}
                     disabled={state.currentPhase === 'running'}
-                    className="h-16 text-lg font-semibold"
+                    size="lg"
                   >
                     {formatDurationLabel(duration)}
                   </Button>
                 ))}
-              </div>
-            </div>
-          </CardContent>
-        </Card>
 
-        {/* SOUND Toggle */}
-        <Card>
-          <CardContent className="py-6">
-            <div className="flex items-center justify-between">
-              <div className="flex items-center gap-3">
-                <Volume2 className="h-5 w-5" />
-                <Typography variant="large" className="font-semibold">
-                  Sonido
-                </Typography>
+                <Select
+                  value={String(state.selectedDuration)}
+                  onValueChange={val => selectDuration(Number(val))}
+                  disabled={state.currentPhase === 'running'}
+                >
+                  <SelectTrigger
+                    size="lg"
+                    className="w-full font-semibold text-center [&>span]:mx-auto"
+                  >
+                    <SelectValue />
+                  </SelectTrigger>
+                  <SelectContent>
+                    <SelectGroup>
+                      <SelectLabel>Personalizado</SelectLabel>
+                      {Array.from(
+                        { length: 300 / 5 },
+                        (_, i) => 5 * (i + 1)
+                      ).map(sec => (
+                        <SelectItem key={sec} value={String(sec)}>
+                          {formatDurationLabel(sec)}
+                        </SelectItem>
+                      ))}
+                    </SelectGroup>
+                  </SelectContent>
+                </Select>
               </div>
-              <button
-                type="button"
-                role="switch"
-                aria-checked={state.soundEnabled}
-                onClick={toggleSound}
-                disabled={state.currentPhase === 'running'}
-                className={`relative inline-flex h-6 w-11 items-center rounded-full transition-colors focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2 ${
-                  state.soundEnabled ? 'bg-primary' : 'bg-muted'
-                }`}
-              >
-                <span
-                  className={`inline-block h-4 w-4 transform rounded-full bg-white transition-transform ${
-                    state.soundEnabled ? 'translate-x-6' : 'translate-x-1'
-                  }`}
-                />
-              </button>
+              <Alert>
+                <Volume2 />
+                <AlertTitle>Sonido</AlertTitle>
+                <AlertDescription className="flex items-baseline justify-between">
+                  <Typography>{`Sonido de notificación al finalizar el descanso.`}</Typography>
+                  <Switch
+                    checked={state.soundEnabled}
+                    onCheckedChange={toggleSound}
+                    disabled={state.currentPhase === 'running'}
+                  />
+                </AlertDescription>
+              </Alert>
             </div>
           </CardContent>
         </Card>

@@ -26,9 +26,9 @@ export default function RestTimerPage() {
 
       <div className="max-w-4xl m-auto lg:p-16 p-8 space-y-16">
         <section className="text-center space-y-4">
-          <Typography variant="large">
-            Selecciona el tiempo de descanso que necesites (60s, 90s o 3min) y
-            el cronómetro te avisará cuando termine con una{' '}
+          <Typography variant="large" className="text-balance">
+            Selecciona el tiempo de <strong>descanso que necesites</strong> y el
+            cronómetro te avisará cuando termine con una{' '}
             <strong>alerta sonora</strong>.
           </Typography>
         </section>

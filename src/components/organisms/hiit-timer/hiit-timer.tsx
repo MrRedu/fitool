@@ -17,6 +17,7 @@ import {
 import { formatTime } from '@/lib/utils-hiit'
 import { Slider } from '@/components/ui/slider'
 import { Switch } from '@/components/ui/switch'
+import { cn } from '@/lib/utils'
 
 export const HIITTimer = () => {
   const { state, startTimer, pauseTimer, resetTimer, updateSettings } =
@@ -135,7 +136,12 @@ export const HIITTimer = () => {
       </Card>
 
       {/* Settings */}
-      <div className="space-y-4">
+      <div
+        className={cn(
+          'space-y-4',
+          state.isRunning && 'opacity-50 pointer-events-none'
+        )}
+      >
         <div className="grid sm:grid-cols-2 gap-4">
           {/* WORK */}
           <Card>

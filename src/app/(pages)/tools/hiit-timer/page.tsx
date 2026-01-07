@@ -29,7 +29,7 @@ export default function HIITTimerPage() {
           <Typography variant="large">
             Configura tu entrenamiento HIIT con tiempos personalizados de{' '}
             <strong>trabajo</strong>, <strong>descanso</strong> y{' '}
-            <strong>rondas</strong>. El timer te guiará durante todo el
+            <strong>rondas</strong>. El contador te guiará durante todo el
             entrenamiento.
           </Typography>
         </section>
