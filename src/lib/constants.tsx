@@ -89,6 +89,16 @@ export const TOOLS = [
     href: '/tools/routine-creator',
     imgSrc: '/tools/cover-routine-creator.webp',
   },
+  {
+    name: 'Cronómetro de HIIT',
+    href: '/tools/hiit-timer',
+    imgSrc: '/tools/cover-hiit-timer.webp',
+  },
+  {
+    name: 'Cronómetro de descanso',
+    href: '/tools/rest-timer',
+    imgSrc: '/tools/cover-rest-timer.webp',
+  },
 ]
 
 // Landing sections
