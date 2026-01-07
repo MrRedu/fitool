@@ -3,6 +3,13 @@ import { OneRMSquadCalculator } from '@/components/organisms/calculators/1rm-squ
 import { Typography } from '@/components/ui/typography'
 import { CALCULATORS } from '@/lib/constants'
 import { Calculator } from 'lucide-react'
+import { type Metadata } from 'next'
+
+export const metadata: Metadata = {
+  title: 'Calculadora de 1RM Sentadilla',
+  description:
+    'Calcula tu repetición máxima aproximada en sentadilla con esta calculadora fácil de usar.',
+}
 
 export default function Calculator1RMSquadPage() {
   return (

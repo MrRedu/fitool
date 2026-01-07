@@ -3,6 +3,13 @@ import { HarrisBenedictCalculator } from '@/components/organisms/calculators/har
 import { Typography } from '@/components/ui/typography'
 import { CALCULATORS } from '@/lib/constants'
 import { Calculator } from 'lucide-react'
+import { type Metadata } from 'next'
+
+export const metadata: Metadata = {
+  title: 'Calculadora de Calorías (Harris-Benedict)',
+  description:
+    'Calcula tus calorías diarias necesarias para mantener, aumentar o disminuir tu peso.',
+}
 
 export default function CalculatorHarrisBenedictPage() {
   return (

@@ -6,9 +6,9 @@ import { TOOLS } from '@/lib/constants'
 import { CatalogGrid } from '@/components/molecules/catalog-grid'
 
 export const metadata: Metadata = {
-  title: 'FiTool - Simple HIIT Timer',
+  title: 'Simple HIIT Timer',
   description:
-    'Timer simple para entrenamientos HIIT con configuración de trabajo, descanso y rondas.',
+    'Contador simple para entrenamientos HIIT con configuración de trabajo, descanso y rondas.',
 }
 
 export default function HIITTimerPage() {

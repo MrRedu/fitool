@@ -7,7 +7,7 @@ import { CatalogGrid } from '@/components/molecules/catalog-grid'
 import { TOOLS } from '@/lib/constants'
 
 export const metadata: Metadata = {
-  title: 'FiTool - Creador de rutinas',
+  title: 'Creador de rutinas',
   description:
     'Herramienta para crear rutinas de entrenamiento personalizadas de manera sencilla.',
 }

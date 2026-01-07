@@ -6,7 +6,7 @@ import { TOOLS } from '@/lib/constants'
 import { CatalogGrid } from '@/components/molecules/catalog-grid'
 
 export const metadata: Metadata = {
-  title: 'FiTool - Cronómetro de Descanso',
+  title: 'Cronómetro de descanso',
   description:
     'Temporizador de descanso personalizable con alerta sonora al finalizar.',
 }
