@@ -10,9 +10,6 @@ export const ContactSection = () => {
           <h2 className="text-center text-4xl font-semibold tracking-tight lg:text-5xl">
             {`¡Contáctanos!`}
           </h2>
-          <p className="mt-4 text-center leading-snug font-medium text-muted-foreground lg:mx-auto">
-            Hopefully this form gets through our spam filters.
-          </p>
           <div className="mt-10 flex justify-between gap-8 max-sm:flex-col md:mt-14 lg:mt-20 lg:gap-12">
             <div>
               <h2 className="font-semibold">Oficina corporativa</h2>
