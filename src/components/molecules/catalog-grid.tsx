@@ -19,14 +19,14 @@ export const CatalogGrid = ({ title, items }: CatalogGridProps) => {
       </Typography>
       <ul className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
         {items.map(({ href, name, imgSrc }) => (
-          <li key={href}>
-            <Link href={href} className="space-y-2">
+          <li key={href} className="h-full aspect-video">
+            <Link href={href} className="space-y-2h-full w-full">
               <Image
-                width={300}
-                height={300}
+                width={400}
+                height={400}
                 src={imgSrc}
                 alt={name}
-                className="rounded-md border h-40 w-full object-cover"
+                className="rounded-md border w-full object-cover"
               />
               <Typography variant="muted">{name}</Typography>
             </Link>
